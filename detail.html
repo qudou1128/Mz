@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="stylesheet" href="font/iconfont.css">
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/detail.js"></script>
+</head>
+<body>
+<!--头部-->
+    <div class="header">
+        <div class="mzContainer">
+            <div class="header-logo">
+                <a href="#" class="logo-link"><img src="./img/meizu.png" alt=""></a>
+            </div>
+            <!--头部搜索-->
+            <ul class="header-server">
+                <li class="server-item" id="search">
+                    <input class="mzInput" placeholder="魅族">
+                    <img src="./img/sousuo%20(2).svg" alt="">
+                </li>
+                <li class="server-item" id="user">
+                    <a href="#" class="server-link">
+                        <img src="./img/YH2.png" alt="" >
+                    </a>
+                </li>
+                <li class="server-item" id="cart">
+                    <a href="#" class="server-link" id="server-cart">
+                        <img src="./img/Gw.png" alt="">
+                        <span class="cart-num"></span>
+                    </a>
+                </li>
+            </ul>
+            <!--头部菜单-->
+            <ul class="header-nav">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="phone">手机</a>
+                    <div class="nav-child">
+                        <div class="mzContainer">
+                            <ul class="nav-childList" style="margin-left: -608px">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/P2.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 16 X
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">2098</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/P3.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 16 X
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">2098</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/P4.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 16 X
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">2098</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/P5.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 16 X
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">2098</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/P6.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 16 X
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">2098</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/P7.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 16 X
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">2098</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/P6.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 16 X
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">2098</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/P5.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 16 X
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">2098</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="phonics">声学</a>
+                    <div class="nav-child">
+                        <div class="mzContainer">
+                            <ul class="nav-childList" style="margin-left: -532px">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/LY3.png">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 pop
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">2098</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/LY2.png">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 pop
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥489</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/LY3.png">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 pop
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥489</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/LY4.png">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 pop
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥489</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/LY5.png">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 pop
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥489</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/LY6.png">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 pop
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥489</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/LY8.png">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 pop
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥489</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/LY3.png">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 pop
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥489</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="capacity">智能</a>
+                    <div class="nav-child">
+                        <div class="mzContainer">
+                            <ul class="nav-childList" style="margin-left: -456px">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/Z1.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 手环
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥390</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/Z2.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 手环
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥390</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/Z3.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 手环
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥390</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/Z4.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 手环
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥390</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/Z5.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 手环
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥390</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/Z6.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 手环
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥390</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/Z7.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 手环
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥390</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/Z8.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 手环
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥390</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="life">生活</a>
+                    <div class="nav-child">
+                        <div class="mzContainer">
+                            <ul class="nav-childList" style="margin-left: -380px">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/S1.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 背包
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥390</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/S2.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 背包
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥390</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/S3.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 背包
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥390</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/S4.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 背包
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥390</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/S5.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 背包
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥390</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/S6.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 背包
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥390</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/S7.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 背包
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥390</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav-childList">
+                                <li class="nav-childItem">
+                                    <a href="#" class="nav-childLink">
+                                        <div class="navBox">
+                                            <img src="./img/S8.jpg">
+                                        </div>
+                                        <p class="nav-childName">
+                                            魅族 背包
+                                        </p>
+                                        <p class="nav-childBottom">
+                                            <span class="nav-price">￥390</span>起
+                                        </p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-item"><a href="#" class="nav-link">Flyme</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">服务</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">专卖店</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">社区</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">APP下载</a></li>
+            </ul>
+        </div>
+    </div>
+<!--page-->
+<div class="page-sku">
+    <div class="fast-nav">
+        <div class="-container">
+            <ul class="ulList">
+                <li class="-item">
+                    <a href="#" class="-link">概述</a>
+                </li>
+                <li class="-item">
+                    <a href="#" class="-link">参数</a>
+                </li>
+                <li class="-item">
+                    <a href="#" class="-link">魅族 V8 标配版</a>
+                </li>
+                <li class="-item">
+                    <a href="#" class="-link">常见问题</a>
+                </li>
+            </ul>
+            <span class="-name">
+            魅族 V8 高配版
+            </span>
+        </div>
+
+    </div>
+</div>
+<!--望大镜-->
+<!--<section class="row container">-->
+   <!--<div class="preview" id="preview">-->
+<div id="magnifier">
+    <div class="small-box">
+        <img src="img/detail1.jpg" alt="#">
+        <span class="hover"></span>
+    </div>
+    <div class="thumbnail-box">
+        <a href="javascript:;" class="btn btn-prev"></a>
+        <a href="javascript:;" class="btn btn-next"></a>
+        <div class="list">
+            <ul class="wrapper">
+                <li class="item item-cur" data-src="img/detail1.jpg"><img src="img/detail1.jpg" alt="#"></li>
+                <li class="item" data-src="img/detail2.jpg"><img src="img/detail2.jpg" alt="#"></li>
+                <li class="item" data-src="img/detail3.jpg"><img src="img/detail3.jpg" alt="#"></li>
+                <li class="item" data-src="img/detail4.jpg"><img src="img/detail4.jpg" alt="#"></li>
+            </ul>
+        </div>
+    </div>
+    <div class="big-box">
+        <img src="img/detail1.jpg" alt="#">
+    </div>
+</div>
+
+
+
+      <div class="preview-avtion">
+       <a href="#"><i><img src="img/sc.svg"></i>收藏</a>
+       <a href="#"><i><img src="img/db.svg"></i>对比</a>
+   </div>
+       <div class="property" id="property">
+           <div class="property-hd">
+               <h1>魅族 V8 高配版</h1>
+               <p class="mod-info"></p>
+           </div>
+           <div class="property-cell">
+               <div class="price">
+                   <div class="mod-price">
+                       <small>¥</small>
+                       <span>1098.00</span>
+                   </div>
+               </div>
+           </div>
+           <div class="property-service">
+               <dl class="service-item">
+                   <dt class="vm">支
+                       <span class="s-space"></span>
+                       <span class="s-space"></span>
+                       持
+                   </dt>
+                   <dd class="mod-dd">
+                       <span>花呗分期</span>
+                       <span>顺丰发货</span>
+                       <span>7天无理由退货</span>
+                   </dd>
+               </dl>
+               <dl class="suda">
+                   <dt class="vm-metatit">配送服务</dt>
+                   <dd class="dd">
+                       广东 广州市
+                       <i class="iconfont">&#xe6a6;</i>
+                   </dd>
+               </dl>
+               <div class="provide">
+
+                   本商品由 魅族 负责发货并提供售后服务
+                   <a href="#">在线客服</a>
+
+               </div>
+           </div>
+           <div class="property-sibling">
+               <dl class="sibling-item">
+                   <dt class="vm-m">
+                       型
+                       <span class="s-space"></span>
+                       <span class="s-space"></span>
+                       号
+                   </dt>
+                   <dd class="clearfix">
+                       <a href="#">魅族 V8 高配版</a>
+                       <a href="#">魅族 V8 标版</a>
+                   </dd>
+               </dl>
+           </div>
+           <div class="property-set">
+               <dl class="set-sale">
+                   <dt class="vm-metatit">网络类型</dt>
+                   <dd class="clearfix">
+                       <a href="#">全网通公开版</a>
+                   </dd>
+               </dl>
+               <dl class="set-sale">
+                   <dt class="vm-metatit">颜色分类</dt>
+                   <dd class="clearfix">
+                       <a href="#"><img src="img/xq1.png">亚金</a>
+                       <a href="#"><img src="img/xq2.png">翟黑</a>
+                   </dd>
+               </dl>
+               <dl class="set-sale">
+                   <dt class="vm-metatit">内存容量</dt>
+                   <dd class="clearfix">
+                       <a href="#">4+64GB</a>
+                   </dd>
+               </dl>
+               <dl class="set-sale">
+                   <dt class="vm-metatit">选择套餐</dt>
+                   <dd class="clearfix">
+                       <a href="#">官方标配</a>
+                       <a href="#">套餐一<span>省49</span></a>
+                   </dd>
+               </dl>
+           </div>
+           <div class="property-huabei clearfix">
+               <div class="meta">
+                   花呗分期
+                   <a href="#"><img src="img/wen.svg"></a>
+               </div>
+               <div class="huabei-bd">
+                   <a href="#" class="prop">
+                       <span class="vm-periods">¥374.41×3期</span>
+                       <span class="vm-rate">含手续费8.41/期</span>
+                   </a>
+                   <a href="#" class="prop">
+                       <span class="vm-periods">¥191.23×6期</span>
+                       <span class="vm-rate">含手续费8.23/期</span>
+                   </a>
+                   <a href="#" class="prop">
+                       <span class="vm-periods">¥98.36×12期</span>
+                       <span class="vm-rate">含手续费6.86/期</span>
+                   </a>
+               </div>
+           </div>
+           <div class="property-buy">
+               <dl class="buy-quantity">
+                   <dt class="vm-metatit">数<span class="s-space"></span><span class="s-space"></span>量
+                   </dt>
+                   <dd class="clearfix">
+                       <div class="mod-control">
+                           <a title="减少"  class="vm-minus disabled">-</a>
+                           <input type="text" value="1"  data-max="5">
+                           <a title="增加" class="vm-plus">+</a>
+                       </div>
+                   </dd>
+               </dl>
+           </div>
+           <div class="buy-button">
+               <a href="#" class="btn-cart">立即购买</a>
+               <a href="#" class="btn-join">加入购物车</a>
+           </div>
+       </div>
+<!--</div>-->
+<!--</section>-->
+<!--服务说明-->
+<section class="simple">
+        <div class="simple-hd container">
+            服务说明
+        </div>
+    <div class="simple-bd container">
+        <a href="#">
+            <img src="img/detail7.jpg">
+            <img src="img/detail8.jpg">
+        </a>
+    </div>
+</section>
+<!--为您推荐-->
+<section class="detail-recommend">
+    <div class="detail-hd container">
+        <h2 class="mod-title">为您推荐</h2>
+    </div>
+    <div class="detail-silder">
+
+    </div>
+</section>
+<!--底部-->
+<footer class="layout-footer">
+   <div class="mzContainer">
+       <section class="footer-top clearfix">
+           <ul class="footer-service">
+               <li class="footer-service-item">
+                   <a href="#" class="item-link">
+                       <img src="img/foot1.png" alt="">
+                       <span class="service-item-text">全场顺丰包邮</span>
+                   </a>
+               </li>
+               <li class="footer-service-item">
+                   <a href="#" class="item-link">
+                       <img src="img/foot2.png" alt="">
+                       <span class="service-item-text">100+ 城市次日送达</span>
+                   </a>
+               </li>
+               <li class="footer-service-item">
+                   <a href="#" class="item-link">
+                       <img src="img/foot3.png" alt="">
+                       <span class="service-item-text">7天无理由退货</span>
+                   </a>
+               </li>
+               <li class="footer-service-item">
+                   <a href="#" class="item-link">
+                       <img src="img/foot4.png" alt="">
+                       <span class="service-item-text">15天换货保障</span>
+                   </a>
+               </li>
+               <li class="footer-service-item">
+                   <a href="#" class="item-link">
+                       <img src="img/foot5.png" alt="">
+                       <span class="service-item-text">1年免费保修</span>
+                   </a>
+               </li>
+               <li class="footer-service-item">
+                   <a href="#" class="item-link">
+                       <img src="img/foot6.png" alt="">
+                       <span class="service-item-text">上门快修</span>
+                   </a>
+               </li>
+           </ul>
+           <div class="footer-concat">
+               <p class="contact-desc">周一至周日 7:30-24:00</p>
+               <a href="#" class="contact-tell">400-788-3333</a>
+               <p>
+                   <a href="#" class="contact-online">
+                       <span class="text">在线客服</span>
+                   </a>
+               </p>
+           </div>
+       </section>
+       <section class="footer-bottom clearfix">
+            <ul class="footer-interlock">
+                <li class="interlock-item">
+                    <a href="#" class="interlock-link">了解魅族</a>
+                </li>
+                <li class="interlock-item">
+                    <a href="#" class="interlock-link">加入我们</a>
+                </li>
+                <li class="interlock-item">
+                    <a href="#" class="interlock-link">联系我们</a>
+                </li>
+                <li class="interlock-item">
+                    <a href="#" class="interlock-link">Flyme</a>
+                </li>
+                <li class="interlock-item">
+                    <a href="#" class="interlock-link">魅族社区</a>
+                </li>
+                <li class="interlock-item">
+                    <a href="#" class="interlock-link">天猫旗舰店</a>
+                </li>
+                <li class="interlock-item">
+                    <a href="#" class="interlock-link">问题反馈</a>
+                </li>
+                <li class="interlock-item">
+                    <a href="#" class="interlock-link">线上销售授权名单公示</a>
+                </li>
+                <li class="interlock-item">
+                    <a href="#" class="interlock-link">出版物经营许可证</a>
+                </li>
+                <li class="interlock-item interlock-lang">
+                    <span href="#" class="interlock-language">
+                        <a href="#" class="interlock-link">
+                              <img src="img/hq.png" alt="">
+                        简体中文
+                        </a>
+                    </span>
+                </li>
+            </ul>
+           <div class="footer-copyright clearfix">
+               <span class="copyright-left">
+                    <a href="#" class="copyright-link copyright-text">©2018 Meizu Telecom Equipment Co., Ltd. All rights reserved.</a>
+                    <a href="#" class="copyright-link copyright-text">粤ICP备13003602号-2</a>
+                    <a href="#" class="copyright-link copyright-text">合字B2-20170010</a>
+                    <a href="#" class="copyright-link copyright-text">营业执照</a>
+                    <a href="#" class="copyright-link copyright-text">法律声明</a>
+                   <a href="#" class="copyright-link">
+                       <i class="layout-icon-police"></i>
+                       粤公网安备 44049102496009 号
+                   </a>
+                   <a href="#" class="copyright-link">
+                       <i class="layout-icon layout-icon-license"></i>
+                   </a>
+                   <a href="#" class="copyright-link">
+                       <i class="layout-icon layout-icon-license"></i>
+                   </a>
+                   <a href="#" class="copyright-link">
+                       <i class="layout-icon layout-icon-license"></i>
+                   </a>
+               </span>
+           </div>
+       </section>
+       <div class="site-gotop" style="display: block">
+           <a class="gotop-suggest" title="建议反馈" href="//me.meizu.com/member/advice/index" target="_blank"></a>
+           <div class="gotop-arrow" title="回到顶部"></div>
+       </div>
+   </div>
+</footer>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="js/magnifier.js"></script>
+<script>
+    $(function () {
+
+        $('#magnifier').magnifier();
+
+    });
+</script>
+
+</body>
+</html>

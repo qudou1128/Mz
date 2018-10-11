@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content=""/>
+    <meta name="description" content="不超过150个字符"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <title></title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+<body>
+<div class="content">
+    <!--头部-->
+    <div class="header">
+        <a href="#" class="logo">
+            <i><img src="./img/meizu.png"></i>
+        </a>
+    </div>
+    <div class="banner-box">
+
+    </div>
+    <!--form表单-->
+    <div class="Form">
+        <div class="tab-title">
+            <a href="#" class="linkBlack">注册 Flyme 账号</a>
+        </div>
+        <div class="tip-box" id="tip-box">
+            <i class="err-ico"></i>
+            <span class="tip-font">请填写完整的登录信息</span>
+            <span class="close-ico"></span>
+        </div>
+        <form class="login-form" onsubmit="return false">
+                <div class="select-box" id="select-box">
+                  <input type="text" class="inp" value="+86">
+                    <i class="row"></i>
+                    <input type = "text" name="username" class="inp phoneNum username" id="username"  required="required" placeholder="手机号码">
+                    <div class="phoneInput">
+                        <input type = "password" name="password" class="inp phoneNum password" id="password" required="required" placeholder="密码">
+                        <span class="passId error2"></span>
+                    </div>
+                </div>
+            <div class="server">
+                <label class="pointer">点击立即注册，即表示您同意并愿意遵守</label>
+                <a href="https://i.flyme.cn/serviceAgreement" class="linkGreen" target="_blank">Flyme服务协议</a>
+                <label class="pointer">和</label>
+                <a href="https://www.meizu.com/legal.html" class="linkGreen" target="_blank">法律声明</a>
+            </div>
+            <button class="btn" type="submit" name="register-btn" id="btn">立即注册</button>
+            <div class="transfer">
+                <a href="login.html">登录</a>
+            </div>
+            <a href="#" id="qr-btn"></a>
+        </form>
+    </div>
+</div>
+<!--底部-->
+<div id="footer" class="footerWrap">
+    <div class="footerInner">
+        <div class="footer-layer">
+            <div class="footer-link">
+                <a href="#">关于魅族</a>
+                <img class="footerLine" src="./img/space.gif">
+                <a href="#">工作机会</a>
+                <img class="footerLine" src="./img/space.gif">
+                <a href="#">联系我们</a>
+                <img class="footerLine" src="./img/space.gif">
+                <a href="#">法律声明</a>
+                <img class="footerLine" src="./img/space.gif">
+                <a href="#">常见问题</a>
+                <img class="footerLine" src="./img/space.gif">
+                <a href="#">简体中文</a>
+            </div>
+            <div class="footer-server">
+                <span class="server-lable">客服热线</span>
+                <span class="server-num">400-788-3333</span>
+                <a href="#" class="server-online">在线客服</a>
+            </div>
+            <div class="footer-outLink">
+                <a href="https://weibo.com/meizumobile" target="_blank">
+                    <i class="icon"><img src="img/weibo.svg"></i>
+                </a>
+                <a href="#">
+                    <i class="icon"><img src="img/wei-xin.svg"></i>
+                </a>
+                <a href="https://user.qzone.qq.com/2762957059" target="_blank">
+                    <i class="icon"><img src="img/kogjian.svg"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="copy">
+        <span>©2018 Meizu Telecom Equipment Co., Ltd. All rights reserved.</span>
+        <a href="http://www.miitbeian.gov.cn/" target="_blank">备案号: 粤ICP备13003602号-4</a>
+        <a href="http://www3.res.meizu.com/static/cn/widget/footer/images/icp2_b2dcb54.jpg" class="linkAgray" target="_blank">经营许可证编号: 粤B2-20130198</a>
+        <a href="http://www2.res.meizu.com/zh_cn/images/common/com_licence.jpg">营业执照</a>
+        <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44049102496076" class="linkC"><img src="img/ghs.png"><a href="#" target="_blank">粤公网安备 44049102496076号</a></a>
+    </div>
+</div>
+<script src="js/jquery.min.js"></script>
+<script src="js/comment/ajax.js"></script>
+<script src="js/register.js"></script>
+<script>
+    register.init('.login-form');
+</script>
+</body>
+</html>
