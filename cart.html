@@ -3,8 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="css/cart.css">
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="js/cart.js"></script>
 </head>
 <body>
+     <div class="header">
+         <div class="wrapper">
+             <div class="header-logo">
+                 <a href="#"><img src="img/meizu.png"></a>
+             </div>
+                 <ul class="header-center">
+                     <li>购物车<i>></i></li>
+                     <li class="link">确认订单<i>></i></li>
+                     <li class="link">在线支付<i>></i></li>
+                     <li class="link">完成</li>
+                 </ul>
+             <ul class="header-right">
+                 <li class="order"><a href="#">我的订单</a></li>
+                 <li class="order">
+                     <a href="#">用户644862268...的商城</a>
+                     <ul class="right-down">
+                         <li class="item"><a href="#">地址管理</a></li>
+                         <li class="item"><a href="#">我的收藏</a></li>
+                         <li class="item"><a href="#">我的回购金</a></li>
+                         <li class="item"><a href="#">问题反馈</a></li>
+                         <li class="item" id="last"><a href="#">退出</a></li>
+                     </ul>
+                 </li>
+             </ul>
 
+         </div>
+     </div>
+<!--购物车-->
+ <div class="cart">
+   <div class="container">
+       <div class="cart-empty">
+           <div class="cart-content">
+               <div class="cart-left">
+                   <img src="img/cart1.png">
+               </div>
+               <div class="cart-right">
+                   <h2>
+                       购物车内还没有商品，赶紧去选购吧~
+                   </h2>
+                   <div class="cart-btn">
+                       <a href="http://localhost:63342/www/project/index1.html?_ijt=fv477mojci6ht3vn84o03ocqtc#">返回商城首页</a>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+ </div>
 </body>
 </html>

@@ -1,109 +1,227 @@
-;(function ($, window, document, undefined) {
+(function($){
 
-  var Magnifier = function (elem) {
-    var self = this;
-    this.$elem = elem;
-    this.$smallBox = this.$elem.find('.small-box');
-    this.$smallBox_pic = this.$smallBox.find('img');
-    this.$smallBox_mask = this.$smallBox.find('.hover');
-    this.$thumbnailBox = this.$elem.find('.thumbnail-box');
-    this.$thumbnailBox_prev = this.$thumbnailBox.find('.btn-prev');
-    this.$thumbnailBox_next = this.$thumbnailBox.find('.btn-next');
-    this.$thumbnailBox_wrapper = this.$thumbnailBox.find('.wrapper');
-    this.$thumbnailBox_item = this.$thumbnailBox.find('.item');
-    this.$thumbnailBox_pic = this.$thumbnailBox.find('img');
-    this.$bigBox = this.$elem.find('.big-box');
-    this.$bigBox_pic = this.$bigBox.find('img');
-  };
+    var fnName = 'magnifier';
+    var magnifier = {
+        magnifier : ".magnifier",//最外层的大容器
 
-  Magnifier.prototype = {
-    moveBigPic: function () { // 改变大图
-      var scaleX = this.$smallBox_mask.position().left / (this.$smallBox.width() - this.$smallBox_mask.width());
-      var scaleY = this.$smallBox_mask.position().top / (this.$smallBox.height() - this.$smallBox_mask.height());
-      var scroll_l = scaleX * (this.$bigBox_pic.width() - this.$bigBox.width());
-      var scroll_t = scaleY * (this.$bigBox_pic.height() - this.$bigBox.height());
+        container : ".magnifier-container",//选择当前主图的承载容器
 
-      this.$bigBox.scrollLeft(scroll_l).scrollTop(scroll_t);
-    },
+        containerImg : '.images-cover',//图片的容器
 
-    changeSrouce: function (index, cur_src) { // 改变大小图地址
-      this.$smallBox_pic.attr('src', cur_src);
-      this.$bigBox_pic.attr('src', 'images/big_'+(index + 1)+'.jpg');
-    },
+        view : ".magnifier-view",//图片放大后承载容器
 
-    setMask: function () { // 设置 mask 宽高
-      var mask_w = this.$smallBox.width() / (this.$bigBox_pic.width() / this.$bigBox.width());
-      var mask_h = this.$smallBox.height() / (this.$bigBox_pic.height() / this.$bigBox.height());
+        width : 400,//图片放大后承载容器宽度
 
-      this.$smallBox_mask.css({width: mask_w, height: mask_h});
-    },
+        height : 400,//图片放大后承载容器高度
 
-    inital: function () { // 初始化
-      var self = this;
-      
-      this.$thumbnailBox_next.click(function () {
-        var ov_pic = self.$thumbnailBox_item.length - 5;
-        var ov_dis = ov_pic * 78;
+        moveView : ".move-view",//跟随鼠标移动的容器
 
-        if (ov_pic > 0) {
-          self.$thumbnailBox_wrapper.animate({marginLeft: -ov_dis});
+        moveWidth : null,//如果设置了移动盒子的宽度，则不计算缩放比例
+
+        zoom : 4,//缩放比例
+
+        thumbnail : ".magnifier-line > ul",//缩略图容器
+
+        assembly : ".magnifier-btn",//按钮组
+
+        index : 0//当前图片的索引
+    };
+
+
+    window[fnName] = function(magnifierAttr){
+
+        //设置属性值
+        if(typeof(magnifierAttr) == "object"){
+
+            for( var n in magnifierAttr){
+
+                magnifier[n] = magnifierAttr[n];
+            }
         }
-      });
-      
-      this.$thumbnailBox_prev.click(function () {
-        self.$thumbnailBox_wrapper.animate({marginLeft: 0});
-      });
 
-      this.$thumbnailBox_item.mouseover(function () {
-        var cur_src = $(this).attr('data-src');
+        var _this = this;
+        //绑定容器
+        _this.magnifier = $(magnifier.magnifier);
+        _this.container = _this.magnifier.find(magnifier.container);
+        _this.view = _this.magnifier.find(magnifier.view);
+        _this.moveView = _this.magnifier.find(magnifier.moveView);
+        _this.thumbnail = _this.magnifier.find(magnifier.thumbnail);
+        _this.assembly = _this.magnifier.find(magnifier.assembly);
+        _this.containerImg = _this.magnifier.find(magnifier.containerImg);
+        var imgBox = _this.containerImg;
 
-        self.$thumbnailBox_item.removeClass('item-cur');
-
-        $(this).addClass('item-cur');
-
-        self.changeSrouce($(this).index(), cur_src);
-      });
-
-      this.$smallBox.hover(function () {
-        self.$bigBox.show();
-        self.$smallBox_mask.show();
-        self.setMask();
-
-        $(this).mousemove(function (ev) {
-          var oEvent = ev || window.event;
-          var offset_pos = {
-            left: oEvent.clientX - $(this).offset().left - self.$smallBox_mask.width() / 2,
-            top: oEvent.clientY - $(this).offset().top - self.$smallBox_mask.height() / 2 + $(window).scrollTop()
-          };
-
-          if (offset_pos.left < 0) {
-            offset_pos.left = 0;
-          } else if (offset_pos.left > $(this).width() - self.$smallBox_mask.width()) {
-            offset_pos.left = $(this).width() - self.$smallBox_mask.width();
-          }
-          if (offset_pos.top < 0) {
-            offset_pos.top = 0;
-          } else if (offset_pos.top > $(this).height() - self.$smallBox_mask.height()) {
-            offset_pos.top = $(this).height() - self.$smallBox_mask.height();
-          }
-
-          self.$smallBox_mask.css(offset_pos);
-
-          self.moveBigPic();
+        //設置寬高
+        _this.magnifier.css({
+            "width" : magnifier.width
         });
-      }, function () {
-        self.$smallBox_mask.hide();
-        self.$bigBox.hide();
-      });
-    },
+        _this.container.css({
+            "width" : magnifier.width,
+            "height" : magnifier.height
+        });
+        _this.view.css({
+            "width" : magnifier.width,
+            "height" : magnifier.height
+        });
 
-    constructor: Magnifier
-  };
+        var boxMoveViewWidth,boxMoveViewHeight;
+        if(magnifier.moveWidth){
 
-  $.fn.magnifier = function () {
-    var magnifier = new Magnifier(this);
+            boxMoveViewWidth = magnifier.moveWidth;
+        }else{
 
-    return magnifier.inital();
-  };
+            boxMoveViewWidth = magnifier.width/magnifier.zoom;
+        }
+        boxMoveViewHeight = boxMoveViewWidth;
 
-})(jQuery, window, document);
+        _this.moveView.css({
+            "width" : boxMoveViewWidth,
+            "height" : boxMoveViewHeight
+        });
+
+        //计算体积碰撞的变量
+        var deviationXl,
+            deviationXr,
+            deviationYt,
+            deviationYb,
+            imgWidth,
+            imgHieght,
+            multiple;
+
+        _this.eqImg = function(){
+
+            var img = new Image(),
+                src = _this.thumbnail.find("img").eq(magnifier.index).attr('src');
+
+            img.src = src;
+
+            //承载容器的宽高
+            containerWidth = magnifier.width;
+            containerHeight = magnifier.height;
+
+            _this.thumbnail.find('>*').removeClass('active').eq(magnifier.index).addClass('active');
+
+            function imgLoadEnd(){
+
+                if(img.width == 0){
+
+                    img.onload = imgLoadEnd;
+                }
+
+                var styleCss;
+                if(img.width > img.height){
+
+                    imgWidth = magnifier.width;
+                    imgHieght = img.height / (img.width / magnifier.width);
+                    styleCss = "top:50%;margin-top:"+(-imgHieght/2)+"px";
+                }else{
+
+                    imgWidth = img.width / (img.height / magnifier.width);
+                    imgHieght = magnifier.width;
+
+                    styleCss = "left:50%;margin-left:"+(-imgWidth/2)+"px";
+                }
+
+                imgBox.empty().append('<img src="'+src+'" width="'+imgWidth+'" height="'+imgHieght+'" style="'+styleCss+'" />');
+
+                //重新计算移动盒子与图片的倍数
+                multiple = magnifier.width / boxMoveViewWidth;
+
+                //容器加载图片
+                _this.view.empty().append('<img src="'+src+'" width="'+imgWidth*multiple+'" height="'+imgHieght*multiple+'" />');
+
+                //偏移量
+                deviationXl = (magnifier.width - imgWidth) /2;
+                deviationXr = magnifier.width - deviationXl - boxMoveViewWidth + 1;//这里额外+1的是要计算容器的左边框
+                deviationYt = (magnifier.height - imgHieght) /2;
+                deviationYb = magnifier.height - deviationYt - boxMoveViewHeight + 1;//这里额外+1的是要计算容器的上边框
+
+            }
+
+            imgLoadEnd();
+        }
+        //完成后执行
+        _this.eqImg();
+
+        _this.moveFn = function(e){
+
+            var X = (e.clientX-_this.magnifier.offset().left)-boxMoveViewWidth/2,
+                Y = (e.clientY-_this.magnifier.offset().top + $(document).scrollTop())-boxMoveViewHeight/2;
+
+            endX = (X > deviationXl) ? (X < deviationXr) ? X : deviationXr : deviationXl;
+            endY = (Y > deviationYt) ? (Y < deviationYb) ? Y : deviationYb : deviationYt;
+
+            //当Y轴超出容器
+            endY = (endY > 0) ? (endY > (magnifier.width-boxMoveViewHeight)) ? (magnifier.height-boxMoveViewHeight) : endY : 0;
+            _this.moveView.css({
+                'left' : endX,
+                'top' : endY,
+                'display' : "block"
+            });
+
+            positionX = (endX - (magnifier.width-imgWidth)/2)*multiple;
+            positionY = (endY - (magnifier.height-imgHieght)/2)*multiple;
+
+            _this.view.css({
+                'display' : "block"
+            }).find('img').css({
+                'margin-left' : -positionX,
+                'margin-top' : -positionY
+            });
+        }
+
+        _this.container.on('mousemove',function(e){
+
+            _this.moveFn(e);
+
+        }).on('mouseleave',function(){
+
+            _this.moveView.hide();
+            _this.view.hide();
+        });
+
+        var thumbnailImg = _this.thumbnail.find('>*'),
+            lineLenght = thumbnailImg.length;
+        _this.imgMove = function(_boole){
+
+            (_boole) ? magnifier.index++ : magnifier.index--;
+
+            var _deviation = Math.ceil(magnifier.width / thumbnailImg.width() /2);
+            if(lineLenght < _deviation){
+                return false;
+            }
+
+            (magnifier.index < 0) ? magnifier.index = 0 : (magnifier.index > lineLenght-_deviation) ? magnifier.index = lineLenght - _deviation : magnifier.index;
+
+            var endLeft = (thumbnailImg.width() * magnifier.index) - thumbnailImg.width();
+
+            _this.thumbnail.css({
+
+                "left" : ((endLeft > 0) ? -endLeft : 0)+"px"
+            });
+        }
+
+        //按钮组动作
+        _this.assembly.find(">*").on('click',function(){
+
+            _this.imgMove($(this).index());
+        });
+
+        thumbnailImg.on('click',function(){
+
+            magnifier.index = $(this).index();
+
+            //显示图片
+            _this.eqImg();
+
+            //缩略图位置移动
+            _this.imgMove(magnifier.index);
+        });
+
+        _this.setIndex = function(n){
+
+            magnifier.index = (n) ? n : 0;
+        }
+
+        return _this;
+    }
+})(jQuery);

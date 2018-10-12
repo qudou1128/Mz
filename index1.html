@@ -28,9 +28,9 @@
                     <em style="font-style: normal">0</em>
                 </a>
                 <!--用户-->
-                <div class="header-item header-user" id="header-user">
-                    <a href="#" class="header-userImg">
-                        <img src="img/YH.png" alt="">
+                <div class="header-item header-user" id="user" style="z-index: 999;";>
+                    <a href="#" class="header-userImg" id="userImg">
+                        <img class="img" src="img/YH.png" alt="">
                     </a>
                 </div>
                 <!--搜索-->
@@ -42,16 +42,16 @@
                 </div>
                 <!--菜单lam-->
                 <ul class="header-link" id="header-link">
-                    <li class="link-product-h1">
+                    <li class="link-product-h1 h1">
                         <a href="#" class="link-a">手机</a>
                     </li>
-                    <li class="link-product-h2">
+                    <li class="link-product-h2 h1">
                         <a href="#" class="link-a">声学</a>
                     </li>
-                    <li class="link-product-h3">
+                    <li class="link-product-h3 h1">
                         <a href="#" class="link-a">智能</a>
                     </li>
-                    <li class="link-product-h4">
+                    <li class="link-product-h4 h1">
                         <a href="#" class="link-a">生活</a>
                     </li>
                     <li><a href="#">Flyme</a></li>
@@ -65,14 +65,15 @@
 
             </div>
             <!--登录下拉-->
-            <div class="user-trigger" id="trigger" style="display: block">
-                <ul class="user-dropdown">
+            <div class="user-trigger" id="trigger">
+                <ul class="user-dropdown" id="dropdown">
                     <li><a href="#">立即登录</a></li>
                     <li><a href="#">立即注册</a></li>
                     <li><a href="#">我的订单</a></li>
                     <li><a href="#">M码通道</a></li>
                 </ul>
             </div>
+
         </div>
         <!--二级菜单-->
         <div class="header-sub" id="data-sub1">
@@ -161,7 +162,7 @@
         </div>
 
     </div>
-<!--内容-->
+    <!--内容-->
 <div class="index-container">
     <div class="index-adv-center" id="index-adv-center" >
         <div class="section-box">
@@ -601,14 +602,249 @@
             <div class="section-box-row">
                 <div class="section-center">
                      <ul class="box-center">
-                        <li></li>
+                        <li>
+                            <div class="goods-box">
+                                <a href="#" class=".box-image">
+                                    <div class="comment-img">
+                                        <img src="img/sq1.jpg" alt="">
+                                    </div>
+                                    <div class="comment-info">
+                                        <img src="img/bu.jpg" alt="">
+                                        <span class="comment-name">小wish安静</span>
+                                    </div>
+                                    <p class="comment-p">静谧之形，澎湃之声，试听魅族 Gravity 悬浮音响.</p>
+                                    <span class="comment-tip">魅族 Gravity 悬浮音响</span>
+                                </a>
+                            </div>
+                        </li>
+                         <li>
+                             <div class="goods-box">
+                                 <a href="#" class=".box-image">
+                                     <div class="comment-img">
+                                         <img src="img/sq2.jpg" alt="">
+                                     </div>
+                                     <div class="comment-info">
+                                         <img src="img/w.jpg" alt="">
+                                         <span class="comment-name">小wish安静</span>
+                                     </div>
+                                     <p class="comment-p">静谧之形，澎湃之声，试听魅族 Gravity 悬浮音响.</p>
+                                     <span class="comment-tip">魅族 Gravity 悬浮音响</span>
+                                 </a>
+                             </div>
+                         </li>
+                         <li>
+                             <div class="goods-box">
+                                 <a href="#" class=".box-image">
+                                     <div class="comment-img">
+                                         <img src="img/sq3.jpg" alt="">
+                                     </div>
+                                     <div class="comment-info">
+                                         <img src="img/w2.jpg" alt="">
+                                         <span class="comment-name">Artrix</span>
+                                     </div>
+                                     <p class="comment-p">真实的数据不会说谎，温柔的魅族 16th 与她的狂暴性能，你喜欢这样的反差美吗？</p>
+                                     <span class="comment-tip">魅族 16th 性能测试</span>
+                                 </a>
+                             </div>
+                         </li>
+                         <li>
+                             <div class="goods-box">
+                                 <a href="#" class=".box-image">
+                                     <div class="comment-img">
+                                         <img src="img/sq4.jpg" alt="">
+                                     </div>
+                                     <div class="comment-info">
+                                         <img src="img/w4.jpg" alt="">
+                                         <span class="comment-name">benbenyuer</span>
+                                     </div>
+                                     <p class="comment-p">脱下外壳依然可以秀肌肉，魅族 16th 强大的不只是表面。</p>
+                                     <span class="comment-tip">魅族 16th 拆解</span>
+                                 </a>
+                             </div>
+                         </li>
                      </ul>
                 </div>
             </div>
         </div>
     </div>
+    <!--精彩视频-->
+    <div class="index-video-center">
+        <div class="comment-box">
+            <div class="section-title">
+                <h3>精彩视频</h3>
+            </div>
+            <div class="section-box-row">
+                <div class="section-center">
+                    <ul class="box-center">
+                        <li>
+                            <div class="goods-box">
+                                <a href="#" class="box-img">
+                                    <div class="comment-img">
+                                        <img src="img/au1.jpg" alt="">
+                                    </div>
+                                    <p class="box-p">魅族 X8 产品视频</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="goods-box">
+                                <a href="#" class="box-img">
+                                    <div class="comment-img">
+                                        <img src="img/vo2.jpg" alt="">
+                                    </div>
+                                    <p class="box-p">魅族 X8 产品视频</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="goods-box">
+                                <a href="#" class="box-img">
+                                    <div class="comment-img">
+                                        <img src="img/vo3.jpg" alt="">
+                                    </div>
+                                    <p class="box-p">魅族 X8 产品视频</p>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="goods-box">
+                                <a href="#" class="box-img">
+                                    <div class="comment-img">
+                                        <img src="img/vo4.jpg" alt="">
+                                    </div>
+                                    <p class="box-p">魅族 X8 产品视频</p>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
+</div>
+    <!--尾部-->
+    <footer class="layout-footer">
+        <div class="mzContainer">
+            <section class="footer-top clearfix">
+                <ul class="footer-service">
+                    <li class="footer-service-item">
+                        <a href="#" class="item-link">
+                            <img src="img/foot1.png" alt="">
+                            <span class="service-item-text">全场顺丰包邮</span>
+                        </a>
+                    </li>
+                    <li class="footer-service-item">
+                        <a href="#" class="item-link">
+                            <img src="img/foot2.png" alt="">
+                            <span class="service-item-text">100+ 城市次日送达</span>
+                        </a>
+                    </li>
+                    <li class="footer-service-item">
+                        <a href="#" class="item-link">
+                            <img src="img/foot3.png" alt="">
+                            <span class="service-item-text">7天无理由退货</span>
+                        </a>
+                    </li>
+                    <li class="footer-service-item">
+                        <a href="#" class="item-link">
+                            <img src="img/foot4.png" alt="">
+                            <span class="service-item-text">15天换货保障</span>
+                        </a>
+                    </li>
+                    <li class="footer-service-item">
+                        <a href="#" class="item-link">
+                            <img src="img/foot5.png" alt="">
+                            <span class="service-item-text">1年免费保修</span>
+                        </a>
+                    </li>
+                    <li class="footer-service-item">
+                        <a href="#" class="item-link">
+                            <img src="img/foot6.png" alt="">
+                            <span class="service-item-text">上门快修</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="footer-concat">
+                    <p class="contact-desc">周一至周日 7:30-24:00</p>
+                    <a href="#" class="contact-tell">400-788-3333</a>
+                    <p>
+                        <a href="#" class="contact-online">
+                            <span class="text">在线客服</span>
+                        </a>
+                    </p>
+                </div>
+            </section>
+            <section class="footer-bottom">
+                <ul class="footer-interlock">
+                    <li class="interlock-item">
+                        <a href="#" class="interlock-link">了解魅族</a>
+                    </li>
+                    <li class="interlock-item">
+                        <a href="#" class="interlock-link">加入我们</a>
+                    </li>
+                    <li class="interlock-item">
+                        <a href="#" class="interlock-link">联系我们</a>
+                    </li>
+                    <li class="interlock-item">
+                        <a href="#" class="interlock-link">Flyme</a>
+                    </li>
+                    <li class="interlock-item">
+                        <a href="#" class="interlock-link">魅族社区</a>
+                    </li>
+                    <li class="interlock-item">
+                        <a href="#" class="interlock-link">天猫旗舰店</a>
+                    </li>
+                    <li class="interlock-item">
+                        <a href="#" class="interlock-link">问题反馈</a>
+                    </li>
+                    <li class="interlock-item">
+                        <a href="#" class="interlock-link">线上销售授权名单公示</a>
+                    </li>
+                    <li class="interlock-item">
+                        <a href="#" class="interlock-link">出版物经营许可证</a>
+                    </li>
+                    <li class="interlock-item interlock-lang">
+                    <span href="#" class="interlock-language">
+                        <a href="#" class="interlock-link">
+                              <img src="img/hq.png" alt="">
+                        简体中文
+                        </a>
+                    </span>
+                    </li>
+                </ul>
+                <div class="footer-copyright clearfix">
+               <span class="copyright-left">
+                    <a href="#" class="copyright-link copyright-text">©2018 Meizu Telecom Equipment Co., Ltd. All rights reserved.</a>
+                    <a href="#" class="copyright-link copyright-text">粤ICP备13003602号-2</a>
+                    <a href="#" class="copyright-link copyright-text">合字B2-20170010</a>
+                    <a href="#" class="copyright-link copyright-text">营业执照</a>
+                    <a href="#" class="copyright-link copyright-text">法律声明</a>
+                   <a href="#" class="copyright-link">
+                       <i class="layout-icon-police"></i>
+                       粤公网安备 44049102496009 号
+                   </a>
+                   <a href="#" class="copyright-link">
+                       <i class="layout-icon layout-icon-license"></i>
+                   </a>
+                   <a href="#" class="copyright-link">
+                       <i class="layout-icon layout-icon-license"></i>
+                   </a>
+                   <a href="#" class="copyright-link">
+                       <i class="layout-icon layout-icon-license"></i>
+                   </a>
+               </span>
+                </div>
+            </section>
+            <div class="site-gotop" style="display: block">
+                <a class="gotop-suggest" title="建议反馈" href="//me.meizu.com/member/advice/index" target="_blank"></a>
+                <div class="gotop-arrow" title="回到顶部"></div>
+            </div>
+        </div>
+    </footer>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.0/js/swiper.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="js/index1.js"></script>
+
 <script>
     var swiper = new Swiper('.mz-banner', {
         autoplay: true,

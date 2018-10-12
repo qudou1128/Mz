@@ -5,8 +5,13 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/detail.css">
     <link rel="stylesheet" href="font/iconfont.css">
-    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.4.2/jquery.min.js"></script>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/detail.js"></script>
+    <script src="js/magnifier.js"></script>
+
 </head>
 <body>
 <!--头部-->
@@ -552,9 +557,9 @@
         </div>
     </div>
 <!--page-->
-<div class="page-sku">
-    <div class="fast-nav">
-        <div class="-container">
+<div class="page-sku" id="page">
+    <div class="fast-nav" id="nav">
+        <div class="container">
             <ul class="ulList">
                 <li class="-item">
                     <a href="#" class="-link">概述</a>
@@ -577,36 +582,50 @@
     </div>
 </div>
 <!--望大镜-->
-<!--<section class="row container">-->
-   <!--<div class="preview" id="preview">-->
-<div id="magnifier">
-    <div class="small-box">
-        <img src="img/detail1.jpg" alt="#">
-        <span class="hover"></span>
-    </div>
-    <div class="thumbnail-box">
-        <a href="javascript:;" class="btn btn-prev"></a>
-        <a href="javascript:;" class="btn btn-next"></a>
-        <div class="list">
-            <ul class="wrapper">
-                <li class="item item-cur" data-src="img/detail1.jpg"><img src="img/detail1.jpg" alt="#"></li>
-                <li class="item" data-src="img/detail2.jpg"><img src="img/detail2.jpg" alt="#"></li>
-                <li class="item" data-src="img/detail3.jpg"><img src="img/detail3.jpg" alt="#"></li>
-                <li class="item" data-src="img/detail4.jpg"><img src="img/detail4.jpg" alt="#"></li>
-            </ul>
+<section class="sect">
+    <div class="magnifier" id="magnifier1">
+        <div class="magnifier-container">
+            <div class="images-cover"></div>
+            <!--当前图片显示容器-->
+            <div class="move-view"></div>
+            <!--跟随鼠标移动的盒子-->
+        </div>
+        <div class="magnifier-assembly">
+            <!--按钮组-->
+            <div class="magnifier-line">
+                <ul class="clearfix animation03">
+                    <li>
+                        <div class="small-img">
+                            <img src="img/detail1.jpg" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="small-img">
+                            <img src="img/detail2.jpg" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="small-img">
+                            <img src="img/detail3.jpg" />
+                        </div>
+                    </li>
+                    <li>
+                        <div class="small-img">
+                            <img src="img/detail4.jpg" />
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--缩略图-->
+        </div>
+        <div class="magnifier-view"></div>
+        <!--经过放大的图片显示容器-->
+        <div class="preview-avtion" id="preview">
+            <a href="#"><i><img src="img/sc.svg"></i>收藏</a>
+            <a href="#"><i><img src="img/db.svg"></i>对比</a>
         </div>
     </div>
-    <div class="big-box">
-        <img src="img/detail1.jpg" alt="#">
-    </div>
-</div>
 
-
-
-      <div class="preview-avtion">
-       <a href="#"><i><img src="img/sc.svg"></i>收藏</a>
-       <a href="#"><i><img src="img/db.svg"></i>对比</a>
-   </div>
        <div class="property" id="property">
            <div class="property-hd">
                <h1>魅族 V8 高配版</h1>
@@ -655,7 +674,7 @@
                        <span class="s-space"></span>
                        号
                    </dt>
-                   <dd class="clearfix">
+                   <dd class="dd">
                        <a href="#">魅族 V8 高配版</a>
                        <a href="#">魅族 V8 标版</a>
                    </dd>
@@ -670,7 +689,7 @@
                </dl>
                <dl class="set-sale">
                    <dt class="vm-metatit">颜色分类</dt>
-                   <dd class="clearfix">
+                   <dd class="dd">
                        <a href="#"><img src="img/xq1.png">亚金</a>
                        <a href="#"><img src="img/xq2.png">翟黑</a>
                    </dd>
@@ -727,8 +746,7 @@
                <a href="#" class="btn-join">加入购物车</a>
            </div>
        </div>
-<!--</div>-->
-<!--</section>-->
+</section>
 <!--服务说明-->
 <section class="simple">
         <div class="simple-hd container">
@@ -863,22 +881,30 @@
                </span>
            </div>
        </section>
-       <div class="site-gotop" style="display: block">
-           <a class="gotop-suggest" title="建议反馈" href="//me.meizu.com/member/advice/index" target="_blank"></a>
-           <div class="gotop-arrow" title="回到顶部"></div>
+       <div class="site-gotop" id="go" style="display: block">
+           <a class="gotop-suggest" title="建议反馈" target="_blank"></a>
+           <button class="gotop-arrow" id="gotop" title="回到顶部"style="outline: none; border: none"></button>
        </div>
    </div>
 </footer>
-<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
-<script src="js/magnifier.js"></script>
 <script>
-    $(function () {
+    $(function() {
 
-        $('#magnifier').magnifier();
+        var magnifierConfig = {
+            magnifier : "#magnifier1",//最外层的大容器
+            width : 500,//承载容器宽
+            height : 500,//承载容器高
+            moveWidth : null,//如果设置了移动盒子的宽度，则不计算缩放比例
+            zoom : 5//缩放比例
+        };
 
+        var _magnifier = magnifier(magnifierConfig);
     });
-</script>
 
+    var $preview = $('#preview') ;
+    var $i = $('i');
+
+
+</script>
 </body>
 </html>
