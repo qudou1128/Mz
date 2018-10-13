@@ -1,0 +1,168 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+i{
+    font-style: normal;
+}
+.container{
+    width: 100%;
+    background: #f8f8f8;
+}
+.wrapper{
+    width:1240px;
+    margin: 0 auto;
+}
+.title{
+    display: flex;
+    justify-content: flex-start;
+    height: 40px;
+    line-height: 40px;
+}
+.title li{
+    font-size: 14px;
+}
+.title li a:last-child{
+    color: #999;
+}
+.title a{
+    color: #333333;
+    margin-right: 10px;
+}
+.selector{
+    border: 1px solid #efefef;
+    background: #FFF;
+    padding: 15px 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+.line-wrap{
+    line-height: 46px;
+    height: auto;
+}
+.line-wrap .mod-key{
+    float: left;
+    width: 75px;
+    padding-left: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #333;
+}
+.mod-value{
+    margin: 0 83px 0 95px;
+    /* overflow: hidden; */
+    zoom: 1;
+    background: #fff;
+}
+.mod-list{
+    overflow: hidden;
+    zoom: 1;
+    padding-top: 6px;
+}
+.mod-list ul li{
+    float: left;
+    margin-right: 62px;
+    margin-bottom: 6px;
+    height: 34px;
+    line-height: 34px;
+}
+.mod-list ul li a{
+    float: left;
+    white-space: nowrap;
+    zoom: 1;
+    color: #333;
+    font-size: 14px;
+}
+.mod-list .act a{
+   color: #00c3f5;
+}
+.mod-list ul li a:hover{
+    color: #00c3f5;
+}
+.filter{
+    margin: 30px 0 20px;
+    overflow: hidden;
+}
+.older{
+    float: left;
+}
+.older a{
+    width: 50px;
+    height: 20px;
+    margin-right: 20px;
+    line-height: 20px;
+    color: #666666;
+    font-size: 14px;
+}
+.older a:hover{
+    color: #00c3f5;
+}
+.older a:first-child{
+    color: #00c3f5;
+}
+.phone{
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+    height: auto;
+}
+.phone #list{
+    width: 1252px;
+    height: auto;
+    overflow: hidden;
+}
+#list li{
+    width: 301px;
+    height: 416px;
+    margin: 0 12px 12px 0;
+    float: left;
+    /*position: relative;*/
+    background: #fff;
+    transition: all .3s ease;
+    margin-right: 5px;
+}
+#list li p span:last-child{
+    display: block;
+}
+#list li img{
+    position: relative;
+    margin: 0 auto 14px;
+    text-align: center;
+    border-radius: 0;
+    border: 0;
+    padding-left: 42px;
+    padding-top: 20px;
+}
+#list li h3{
+    font-weight: normal;
+    height: 21px;
+    text-align: center;
+    font-size: 14px;
+    color: #333;
+    width: 100%;
+}
+#list li p{
+    display: inline-block;
+    padding-top: 20px;
+    width: 100%;
+    padding-left: 79px;
+}
+#list li button{
+    display: block;
+    width: 102px;
+    height: 30px;
+    border: 1px solid#32A5E7;
+    border-radius: 5px;
+    outline: none;
+    background: #32A5E7;
+    color: #ffffff;
+    margin-top: 20px;
+    margin-left: 20px;
+
+}

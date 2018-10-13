@@ -1,0 +1,82 @@
+[
+  {
+    "id": "Mz1",
+    "price": 1798,
+    "img": "https://openfile.meizu.com/group1/M00/06/A9/Cgbj0FusSK2AQZgiAAlFKHoO-co889.png@240x240.png",
+    "color": ["银色","深灰色"],
+    "version": ["64G官方标配", "256G官方标配"],
+    "title": "魅族X8"
+  },
+  {
+    "id": "Mz2",
+    "price": 1098,
+    "img": "https://openfile.meizu.com/group1/M00/06/AC/Cgbj0VujaMOAFzUFAARRWnHvM84529.png@240x240.jpg",
+    "color": ["黑色","银色","深灰色"],
+    "version": ["64G官方标配", "256G官方标配"],
+    "title": "魅族15"
+  },
+  {
+    "id": "Mz3",
+    "price": 2458,
+    "img": "https://openfile.meizu.com/group1/M00/04/0E/Cgbj0FrcbsCANuv_AAzufmGf2yU449.png@240x240.jpg",
+    "color": ["翡翠色","蓝色","黑色"],
+    "version": ["64G官方标配", "128G官方标配","256G官方标配"],
+    "title": "魅蓝15 plus"
+  },
+  {
+    "id": "Mz4",
+    "price": 1699,
+    "img": "https://openfile.meizu.com/group1/M00/06/9B/Cgbj0FujRsOADooMAAbehLx6_Co899.png@240x240.jpg",
+    "color": ["魅海蓝","幻夜黑","碧玉青"],
+    "version": ["64G官方标配", "128G官方标配"],
+    "title": "魅族16th"
+  },
+  {
+    "id": "Mz5",
+    "price":1678,
+    "img": "https://openfile.meizu.com/group1/M00/06/AB/Cgbj0VujRzGADEIWAAdN-7lvIkE357.png@240x240.jpg",
+    "color": ["翡翠色","蓝色","黑色"],
+    "version": ["64G官方标配", "128G官方标配","256G官方标配"],
+    "title": "魅蓝16th plus"
+  },
+  {
+    "id": "Mz6",
+    "price": 1568,
+    "img": "https://openfile.meizu.com/group1/M00/01/F5/Cgbj0FmtGa2AI-b8AAvNA3-7FQU194.png@240x240.jpg",
+    "color": ["翡翠色","蓝色","黑色"],
+    "version": ["64G官方标配", "128G官方标配","256G官方标配"],
+    "title": "魅蓝Note6"
+  },
+  {
+    "id": "Mz7",
+    "price": 4678,
+    "img": "https://openfile.meizu.com/group1/M00/01/BC/Cgbj0Fl4OduAN6lZAAoYW04sCAc119.png@240x240.jpg",
+    "color": ["灰色","蓝色","黑色"],
+    "version": ["64G官方标配", "128G官方标配","256G官方标配"],
+    "title": "魅蓝Note6"
+  },
+  {
+    "id": "Mz8",
+    "price": 3118,
+    "img": "https://openfile.meizu.com/group1/M00/01/F5/Cgbj0FmtGa2AI-b8AAvNA3-7FQU194.png@240x240.jpg",
+    "color": ["翡翠色","蓝色","黑色"],
+    "version": ["64G官方标配", "128G官方标配","256G官方标配"],
+    "title": "魅蓝Note6"
+  },
+  {
+    "id": "Mz9",
+    "price": 790,
+    "img": "https://openfile.meizu.com/group1/M00/06/99/Cgbj0FujMs-AZDb5AA14vDzyhPE669.png@240x240.jpg",
+    "color": ["翡翠色","蓝色","黑色"],
+    "version": ["64G官方标配", "128G官方标配","256G官方标配"],
+    "title": "魅蓝V8标配版"
+  },
+  {
+    "id": "Mz10",
+    "price": 3788,
+    "img": "https://openfile.meizu.com/group1/M00/06/AC/Cgbj0VujaMOAFzUFAARRWnHvM84529.png@240x240.jpg",
+    "color": ["翡翠色","蓝色","黑色"],
+    "version": ["64G官方标配", "128G官方标配","256G官方标配"],
+    "title": "魅族V8高配版"
+  }
+]

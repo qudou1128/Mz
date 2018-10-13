@@ -313,8 +313,11 @@ body{
 .move-view{
     width: 100px;
     height: 100px;
+    border: 1px solid #ffffff;
     position: absolute;
-    background-image: url('../images/move-box.png');
+    background: #ffffff;
+    opacity:0.3;
+    cursor: crosshair;
 }
 .images-cover{
     height: 100%;

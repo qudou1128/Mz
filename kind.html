@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/kind.css">
+</head>
+<body>
+<div class="container">
+    <div class="wrapper">
+        <ul class="title">
+            <li><a href="#">首页</a><i>></i>&nbsp;&nbsp;</li>
+            <li><a href="#">全部商品</a><i>></i>&nbsp;&nbsp;</li>
+            <li><a href="#">手机</a></li>
+        </ul>
+        <div class="selector">
+            <div class="cate">
+                <div class="prop">
+                    <div class="line-wrap">
+                        <div class="mod-key"><span>屏幕尺寸：</span></div>
+                    </div>
+                    <div class="mod-value">
+                        <div class="mod-list">
+                            <ul>
+                                <li class="first"><a href="#">全部</a></li>
+                                <li><a href="#">5.2英寸</a></li>
+                                <li><a href="#">5.2英寸</a></li>
+                                <li><a href="#">5.2英寸</a></li>
+                                <li class="act"><a href="#">5.2英寸</a></li>
+                                <li><a href="#">5.2英寸</a></li>
+                                <li><a href="#">5.2英寸</a></li>
+                                <li><a href="#">5.2英寸</a></li>
+                                <li><a href="#">5.2英寸</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="prop">
+                    <div class="line-wrap">
+                        <div class="mod-key"><span>机身内存：</span></div>
+                    </div>
+                    <div class="mod-value">
+                        <div class="mod-list">
+                            <ul>
+                                <li class="first"><a href="#">全部</a></li>
+                                <li><a href="#">5.2英寸</a></li>
+                                <li><a href="#">5.2英寸</a></li>
+                                <li class="act"><a href="#">5.2英寸</a></li>
+                                <li><a href="#">5.2英寸</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="filter">
+            <div class="older">
+                <a href="#">推荐</a>
+                <a href="#">新品</a>
+                <a href="#">价格</a>
+            </div>
+        </div>
+        <div class="phone">
+            <ul id="list"></ul>
+        </div>
+    </div>
+</div>
+            <!--<a href="cart.html">购物车</a>-->
+
+</body>
+<script src='js/jquery.min.js'></script>
+<script>
+    var list = []; // 列表数据
+    $.ajax({
+        url: 'json/list.json',
+        success: function (data) {
+//            console.log(data)
+            list = data
+            // 渲染DOM
+            renderDOM(list)
+        }
+    })
+
+    function filterData(brand) {
+        var arr = [];
+        list.map(function (item, index) {
+            if (item.brand == brand) {
+                arr.push(item)
+            }
+        })
+        renderDOM(arr)
+    }
+
+    function renderDOM(result) {
+        $('#list').html(''); // 清空代码
+        result.map(function (item, index) {
+            var str = ""
+            item.color.map(function (itm, idx) { // 内层颜色循环--- 先把整个颜色结构得到
+                str += `<span>${itm}</span>、`
+            })
+            // 渲染---- 一定要在所有内层循环之后
+            $('#list').append(`
+                <li>
+                   <img src="${item.img}" alt="" style="width: 220px; height:220px">
+                   <h3>${item.title}</h3>
+                   <p>
+                        ${str}
+                        <span>${item.price}</span>
+                        <button onclick="getInfo(${index})">加入购物车</button>
+                    </p>
+                </li>
+            `)
+        })
+    }
+
+    /**
+     * 获取点击的商品的具体信息，并且设置数量为1，调用addCart()加入过购物车
+     * @param index
+     */
+    function getInfo(index) {
+//        console.log('1111')
+        // 获取到点击了哪一个商品
+//        console.log(index)
+        // 获取到当前点击按钮的数据对象，设置当前对象的数量为1
+        var shopObj = list[index];
+        shopObj.num = 1;
+//        console.log(shopObj)
+
+        addCart(shopObj)
+    }
+
+    /**
+     * 加入购物车
+     * 如果是第一次加入，直接存入，存入形式为 [{}]
+     * 如果原来本身有数据，判断数据中有没有当前数据，如果有数量加1，如果没有，添加进去
+     * shopObj 要加入购物车的商品信息
+     */
+    function addCart(shopObj) {
+        /*
+        判断购物车中是否有商品信息
+        假设购物车中 localStorage.getItem('1805cart') 有值代表有数据，没值代表没有数据，可以直接插入
+        */
+        var cartListStr = getItem('MzCart')
+        if (cartListStr) {
+            // 有值----后续处理--
+            // 有该产品，数量加1，没有添加产品
+//            console.log('有值')
+            var cartList = JSON.parse(cartListStr);
+            changeCart(cartList, shopObj)
+        } else {
+            // 第一次
+//            var arr = [];
+//            arr.push(shopObj)
+//            setItem('MzCart', arr)
+            setItem('MzCart', [shopObj])
+        }
+    }
+
+    /**
+     * 通过判断添加的商品是不是购物车中已经存在的，已存在，数量加1，不存在，直接添加进去
+     * @param cartList 购物车中放的数据
+     * @param shopObj  添加到购物车的数据
+     */
+    function changeCart(cartList, shopObj) {
+        //遍历数据---判断有没有该商品
+        var result = false; // 如果有该数据，则此值为true
+        var activeIndex = 0; // 选中的索引值
+        cartList.map(function (item, index) {
+            if (item.id == shopObj.id) {  // 表示存在
+                activeIndex = index // 有该数据时对应的购物车的索引值
+                result = true;
+            }
+        })
+
+        result ? cartList[activeIndex].num = cartList[activeIndex].num * 1 + 1 : cartList.push(shopObj);
+        setItem('MzCart', cartList) // 更新后的数据重新放入购物车
+    }
+
+    function getItem(key) {
+        return localStorage.getItem(key)
+        // return $.cookie('key')
+    }
+
+    function setItem(key, value) {
+        localStorage.setItem(key, JSON.stringify(value))
+        // $.cookie(key, JSON.stringify(value), {expires: 7})
+    }
+</script>
+</html>

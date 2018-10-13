@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content=""/>
+    <meta name="description" content="不超过150个字符"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telphone=no, email=no"/>
+    <title></title>
+</head>
+<body>
+<ul id="list"></ul>
+<script src="js/jquery.min.js"></script>
+<script>
+    //
+    <!--获取数据-->
+    var list = [];//列表数据
+    $.ajax({
+        url: 'json/list.json',
+        success: function (data) {
+            console.log(data);
+            list = data
+            renderDom()//渲染Dom节点
+        }
+    })
+
+    /**
+     * 根据数据渲染Dom中, list经过重新赋值 --分类列表数据--循环添加到页面中--加入购物车获取索引值
+     * @param data
+     */
+    function renderDom() {
+        $('#list').html(''); //清空代码
+        //遍历数据
+        list.map(function (item, index) {
+            $("#list").append(`
+           <li>
+               <img src="${item.img}" alt="" style="width:100px">
+                <h3>${item.title}</h3>
+                <p>
+                   <span>${item.price}</span>
+                   <button onclick="getInfo(${index})">加入购物车</button>
+                </p>
+           </li>
+            `)
+        })
+    }
+
+    /**
+     * 获取点击的商品的信息,并且设置数量为1,调用addCart()加入购物车
+     * @param index
+     */
+
+    function getInfo(index) {
+//        console.log(111);
+//        console.log(index); //获取到点击的哪一个商品
+        //获取当前点击按钮的数据
+        var shopObj = list[index];
+        shopObj.num = 1;
+        //        console.log(shopObj)
+        addCart(shopObj)
+    }
+
+    /**
+     * 加入购物车
+     * 如果是第一次加入,直接存入, 存入形式为[{}]
+     * 如果原来本身有数据, 判断数据中有没有当前数据,如果有数量加1, 如果没有,添加进去
+     *shopObj要加入购物车的商品信息
+     */
+    function addCart(shopObj) {
+        var cartListStr = getItem('MzCart');
+        if (cartListStr) {
+//           如果有值--有该商品,数量加1,没有就添加上商品
+//            console.log('有值');
+            var cartLIst = JSON.parse(cartListStr);
+            changeCart(cartLIst, shopObj)
+        } else {
+//            var arr = [];
+//            arr.push(shopObj);
+//            setItem('MzCart', arr)
+            setItem('MzCart', [shopObj])
+        }
+    }
+
+    ///** 通过判断添加的商品是不是购物车存在的,如果有数量加1,不存在,直接添加进去
+    // * cartLIst  购物车放的数据
+    // * shopObj  添加到购物车的数据
+    // *
+    //  /
+    function changeCart(cartList, shopObj) {
+        //遍历数据判断有没有该商品
+        var result = false; //如果有该数据,值为true
+        var activeIndex = 0;//选中的索引值
+        cartList.map(function (item, index) {
+            if (item.id == shopObj.id) {
+                activeIndex = index //有该数据时出现对应的索引
+                result = true;
+            }
+        })
+
+        //判断result的值执行不同的逻辑
+        if (result) {
+//           console.log(cartList[activeIndex].num)//拿到该商品在购物车的数量
+            cartList[activeIndex].num = cartList[activeIndex].num * 1 + 1;//数量+1
+//            console.log(cartList[activeIndex].num);//2
+//            setItem('MzCart', cartList) //更新数据后重新放入购物车
+        } else {
+            console.log('没有数据')
+            cartList.push(shopObj);//没有该数据直接添加进去
+//            setItem('MzCart', cartList)/
+        }
+        setItem('MzCart', cartList)
+    }
+
+
+    /**
+     *  封装
+     */
+    function getItem(key) {
+        return localStorage.getItem(key)
+    }
+
+    function setItem(key, value) {
+        localStorage.setItem(key, JSON.stringify(value))//存储本地要转字符串
+    }
+</script>
+</body>
+</html>
