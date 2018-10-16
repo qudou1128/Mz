@@ -1,275 +1,438 @@
-*{
+* {
     padding: 0;
     margin: 0;
 }
-.content{
-    width:100%;
+
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+.content {
+    width: 100%;
     position: relative;
 }
-.header{
+
+.header {
     height: auto;
     margin: auto;
-    width:1200px;
+    width: 1200px;
     padding-top: 28px;
     padding-bottom: 40px;
 }
-.header .logo{
+
+.header .logo {
     width: 110px;
-    height:20px;
+    height: 20px;
     float: left;
     display: block;
     overflow: hidden;
 
 }
-.header .logo img{
-    width:100%;
-    height:100%;
+
+.header .logo img {
+    width: 100%;
+    height: 100%;
     margin: auto;
 }
-.banner-box{
+
+.banner-box {
     position: relative;
     min-height: 750px;
     max-height: 1080px;
     background: linear-gradient(to bottom, #f8fcff, #f8fcff, #f8fcff);
 }
-.banner-box:before{
+
+.banner-box:before {
     position: absolute;
-    content:' ';
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    content: ' ';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: url(./../img/banner.jpg) no-repeat center;
-    background-size:contain ;
-}
-.Form{
-    position: absolute;
-    top:14%;
-    right:220px;
-    width:298px;
-    background:#fff;
-    padding: 35px 35px 10px;
-    border-radius: 2px;
-    margin-top: 30px;
-}
-.Form .tab-title{
-    font-size: 18px;
-    margin-top: 35px;
-    width:300px;
-    text-align: center;
-}
-.Form .tab-title .linkBlack{
-    color: #7f7f7f;
-}
-.Form .tab-title .linkBlack:hover{
-    color: #515151;
-}
-a{
-    text-decoration: none;
-}
-.Form .tab-title span{
-    color: #B3ABAB;
-    margin: 0 32px 0 32px;
-}
-.Form .tab-title .linkBlue{
-    color: #32A5E7;
-}
-.Form .tip-box{
-    position: relative;
-    height:33px;
-    width:96%;
-    border: 1px solid#ffc2b3;
-    border-radius: 2px;
-    background: #ffd1ca;
-    margin-top:20px;
-    /*display: table;*/
-   display: none;
-
+    background-size: contain;
 }
 
-.Form .tip-box i{
-    width:16px;
-    height:16px;
-    background: url(./../img/error-ico.png);
-    position: absolute;
-    top:10px;
-    left:10px;
-}
-.Form .tip-box .tip-font{
-    font-size: 12px;
-    color: #666;
-    padding: 0 25px 0 35px;
-    display: table-cell;
-    vertical-align: middle;
-}
-.Form .tip-box .close-ico{
-    width:16px;
-    height:16px;
-    background: url(./../img/close-ico.png) no-repeat;
-    position: absolute;
-    right:10px;
-    top:12px;
-    cursor: pointer;
-    display: inline-block;
-}
-.phoneInput{
-    margin-bottom: 20px;
-    text-align: center;
-    padding-top: 12px;
-}
-.phoneInput span{
-    display: block;
-    color: #cccccc;
-    font-size: 12px;
-    display: none;
-
-}
-.phoneInput .phoneNum{
-    width:94%;
-    height:46px;
-    border-radius: 2px;
-    outline: none;
-    border: 1px solid #dadada;
-    color: #474747;
-    text-indent: 15px;
-    vertical-align: middle;
-    margin-bottom: 20px;
-    font-size: 14px;
-}
-
-.rememberFiled .select{
-    width:18px;
-    height:18px;
-    display: inline-block;
-    cursor: pointer;
-    background: none;
-}
-.rememberFiled .remember{
-    font-size: 14px;
-    color:#7f7f7f;
-    margin-left: 7px;
-    cursor: pointer;
-}
-.rememberFiled .remember:hover{
-    color:#000e30;
-}
-.login-form{
-    position: relative;
-}
-.login-form .btn{
-    width:300px;
-    height:40px;
-    background: #32a5e7;
-    border: 1px solid#32a5e7;
-    color: #fff;
-    font-size: 14px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    margin-top: 25px;
-    border-radius:2px ;
-}
-.transfer{
-    width:300px;
-    height:40px;
-    display: flex;
-    justify-content: space-between;
-    padding-top: 20px;
-}
-.transfer a{
-    display: block;
-    color: #32A5E7;
-    font-size: 14px;
-}
-.login-form #qr-btn{
-    width:35px;
-    height:35px;
-    background: url("./../img/qr.png") no-repeat center;
-    position: absolute;
-    right:-27px;
-    top:-85px;
-    display: block;
-}
 
 /*底部*/
-#footer{
+#footer {
     border-color: transparent !important;
 }
-.footerWrap{
-    width:100%;
-    height:130px;
+
+.footerWrap {
+    width: 100%;
+    height: 130px;
     /*background:pink ;*/
-    border-top:1px solid#E5E6E7;
+    border-top: 1px solid #E5E6E7;
     color: #000e30;
 }
-.footerInner{
-    width:1000px;
+
+.footerInner {
+    width: 1000px;
     font-size: 14px;
     margin: 24px auto;
 }
-.footer-layer{
-    height:50px;
+
+.footer-layer {
+    height: 50px;
     line-height: 50px;
 }
-.footer-link{
-    float:left;
+
+.footer-link {
+    float: left;
     color: #000e30;
 }
-.footer-link a{
+
+.footer-link a {
     color: #000e30;
 }
-.footerLine{
-    background:#888;
-    width:1px;
-    height:10px;
+
+.footerLine {
+    background: #888;
+    width: 1px;
+    height: 10px;
     margin: 0 5px;
 }
-.footer-server{
+
+.footer-server {
     float: left;
     margin-left: 36px;
 }
-.server-lable{
+
+.server-lable {
     margin-right: 10px;
 }
-.server-num{
+
+.server-num {
     margin-right: 20px;
 }
-.server-online{
-   width:65px;
-    height:20px;
+
+.server-online {
+    width: 65px;
+    height: 20px;
     background: #32a5e7;
     color: #fff;
     line-height: 18px;
     display: inline-block;
-    border-radius:2px;
+    border-radius: 2px;
     text-align: center;
 }
-.footer-outLink{
-  position: relative;
+
+.footer-outLink {
+    position: relative;
     float: right;
     padding-top: 10px;
 }
+
 .icon img {
     margin-left: 10px;
 }
-.copy{
-    width:1000px;
+
+.copy {
+    width: 1000px;
     margin: auto;
     font-size: 12px;
 }
-.copy span{
+
+.copy span {
     color: #7f7f7f;
     float: left;
 }
-.copy a{
+
+.copy a {
     color: black;
     float: left;
 }
-.linkAgray{
+
+.linkAgray {
     margin-left: 6px;
 }
-.linkC{
+
+.linkC {
     float: left;
     margin-left: 6px;
     padding-bottom: 10px;
 }
+
+/*form*/
+.mainForm {
+    margin-top: 100px;
+    width: 343px;
+    margin: 100px auto 0px;
+    overflow: hidden;
+    position: absolute;
+    top:63px;
+    right:188px;
+    background: #ffffff;
+    padding-left: 44px;
+    padding-top: 44px;
+    padding-right: 24px;
+    border-radius: 2px;
+}
+.error{
+   font-size: 14px;
+    line-height: 44px;
+    color: red;
+}
+.number {
+    font-size: 20px;
+    margin-left: -5px;
+    margin-bottom: 30px;
+    width: 350px;
+    text-align: center;
+}
+
+.number a {
+    color: #515151;
+}
+
+.linkABlue:visited {
+    color: #00a7ea;
+}
+
+.linkAGray:hover {
+    color: #2b2b2b;
+}
+
+.number span {
+    color: #d9d9d9;
+    display: inline-block;
+    border: 1px solid #dadada;
+    border-left: 1px;
+    height: 16px;
+    line-height: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.normalInput {
+    float: left;
+    position: relative;
+    display: inline-block;
+    padding: 0px 10px;
+    width: 309px;
+    height: 48px;
+    line-height: 22px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #dadada;
+    outline: none;
+    color: #474747;
+    overflow: visible;
+}
+
+.normalInput input {
+    font-size: 16px;
+    width: 100%;
+    padding: 14px 0;
+    height: 20px;
+    border: none;
+    border: none;
+    outline: none;
+}
+
+.errorC {
+    margin-bottom: 10px;
+    border-color: red;
+    color: red;
+}
+
+.checkedN {
+    border: 1px solid #1ece6d;
+}
+
+.formLine {
+    color: #d9d9d9;
+    height: 40px;
+    display: inline-block;
+    border-left: 1px solid #dadada;
+    position: absolute;
+    right: 100px;
+    top: 5px;
+}
+
+#getKey {
+    width: 80px;
+    border: none;
+    outline: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    color: #666666;
+}
+
+.i_icon {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.normalInput .password {
+    float: left;
+    width: 200px;
+}
+
+.normalInput .password1 {
+    float: left;
+    width: 200px;
+    display: none;
+}
+
+.normalInput .passwordN {
+    float: left;
+    width: 200px;
+    display: block;
+    border: none;
+    outline: none;
+}
+
+.normalInput .password1N {
+    float: left;
+    width: 200px;
+    display: none;
+}
+
+.pwdBtnShow {
+    outline: none;
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    float: right;
+    margin-right: 5px;
+}
+
+#pwdBtn {
+    margin-top: 13px;
+    margin-bottom: 10px;
+}
+
+.pwdBtnShow i {
+    background-image: url("./../img/elements.png");
+    background-position: -30px -93px;
+    background-repeat: no-repeat;
+}
+
+.pwdBtnShowN {
+    outline: none;
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    float: right;
+    margin-right: 5px;
+}
+
+#pwdBtnN {
+    margin-top: 13px;
+    margin-bottom: 10px;
+}
+
+.pwdBtnShowN i {
+    background-image: url("./../img/elements.png");
+    background-position: -30px -93px;
+    background-repeat: no-repeat;
+}
+
+.rememberField {
+    margin-bottom: 30px;
+    height: 20px;
+    line-height: 20px;
+    float: left;
+    display: block;
+}
+
+.checkboxPic {
+    outline: none;
+    display: inline-block;
+    width: 25px;
+    height: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+
+.pointer {
+    cursor: pointer;
+}
+
+.otherError {
+    display: none;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    color: red;
+    float: left;
+}
+
+.fullBtnBlue {
+    display: inline-block;
+    height: 50px;
+    width: 342px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+    outline: none;
+    cursor: pointer;
+    background-color: #32a5e7;
+    color: #fff;
+    border-radius: 2px;
+}
+
+.rememberField i button{
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    outline: none;
+    border: 1px solid#cccccc;
+    border-radius: 2px;
+    cursor: pointer;
+ }
+
+/*mainForm1end*/
+
+/*mainForm2*/
+.linkAGray2:visited {
+    color: #00a7ea;
+}
+
+.linkABlue2:hover {
+    color: #2b2b2b;
+}
+
+.normalInput .username {
+    width: 220px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    height: 20px;
+    line-height: 22px;
+    padding: 14px 0;
+}
+
+/*mainForm2end*/
+.mainForm2 {
+    display: none;
+}
+.mainForm ul{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.mainForm li a{
+    color: #32A5E7;
+    font-size: 14px;
+}
+

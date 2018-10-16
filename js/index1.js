@@ -1,46 +1,52 @@
 //用户登录下拉
-$(document).ready(function () {
-    $('#user').click(function () {
-        $('#trigger').find('#dropdown').fadeOut(200);
+$(function(){
+    $('.ulRight').hover(function(){
+        $(this).find('#dropdown').css('display', 'block');
+    }, function(){
+        $(this).find('#dropdown').css('display', 'none');
+    });
+});
+
+   // // 二级菜单
+    $('#header-nav').find('.navLink').mouseenter(function () {
+        $(this).find('.item').fadeIn();
+        $(this).siblings('li').find('.item').fadeOut();
+        $('.header').css({'background':'#fff','height':'260px','color':'#515151'},{'border-bottom':'1px solid #666'})
+        $('.header').siblings('li').css({'background':'','height':''})
+
+    });
+    $('#header-nav').mouseleave(function () {
+        $(this).find('.item').fadeOut();
+        $(this).find('.item').stop(true,true)
+        $('.header').css({'background':'','height':''})
+
     });
 
-    $('#user').click(function () {
-        $('#trigger').find('#dropdown').fadeIn(100);
-    });
-    $('#user').click(function () {
-        $('#trigger').find('#dropdown').fadeToggle();
-    });
 
+//    回到顶部
+$(document).ready(function() {
+
+    //为当前窗口添加滚动条滚动事件
+    $(window).scroll(function() {
+        var scroTop = $(window).scrollTop();
+
+        if (scroTop > 1000) {
+            $('.site-gotop').fadeIn(500);
+        } else {
+            $('.site-gotop').fadeOut(500);
+        }
+    })
+
+    //为返回顶部元素添加点击事件
+    $('.site-gotop').click(function() {
+        //将当前窗口的内容区滚动高度改为0，即顶部
+        $("html,body").animate({
+            scrollTop: 0
+        }, "fast");
+    });
 });
 
 
-
-
-//二级菜单
-  $(document).ready(function () {
-      $('#header-link li').mouseover(function(){
-          var index =  $('#header-link li').index($(this)),
-               divList = $('.data-sub').children('li');
-               divList.hide();
-               divList.eq(index).show();
-               clearTimeout(test);
-               divList.mouseover(function () {
-                   // clearTimeout(test);
-                   $(this).show();
-               });
-                divList.mouseover(function () {
-                     clearTimeout(test);
-                     $(this).hide();
-          });
-      });
-       $('#header-link li').mouseout(function () {
-           var index =  $('#header-link li').index($(this));
-           divList = $('.data-sub').children('li');
-           test = setTimeout(function () {
-               divList.hide();
-           },2000);
-       });
-  });
 
 
 

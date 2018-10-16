@@ -164,5 +164,9 @@ i{
     color: #ffffff;
     margin-top: 20px;
     margin-left: 20px;
+    cursor: pointer;
 
+}
+#list li button:hover{
+    opacity: 0.4;
 }

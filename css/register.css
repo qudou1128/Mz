@@ -2,6 +2,13 @@
     padding: 0;
     margin: 0;
 }
+
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
 .content{
     width:100%;
     position: relative;
@@ -42,187 +49,272 @@
     background: url(./../img/banner.jpg) no-repeat center;
     background-size:contain ;
 }
-.Form{
-    position: absolute;
-    top:14%;
-    right:220px;
-    width:298px;
-    background:#fff;
-    padding: 35px 35px 10px;
-    border-radius: 2px;
-    margin-top: 30px;
-}
-.Form .tab-title{
-    font-size: 18px;
-    margin-top: 35px;
-    width:300px;
-    text-align: center;
-}
-.Form .tab-title .linkBlack{
-    color: #00a7ea;
-}
+/*表单*/
 
-a{
-    text-decoration: none;
-}
-.Form .tab-title span{
-    color: #B3ABAB;
-    margin: 0 32px 0 32px;
-}
-.Form .tab-title .linkBlue{
-    color: #32A5E7;
-}
-.Form .tip-box{
-    position: relative;
-    height:33px;
-    width:96%;
-    border: 1px solid#ffc2b3;
-    border-radius: 2px;
-    background: #ffd1ca;
-    margin-top:25px;
-    display: table;
-    margin-bottom: 50px;
-    display: none;
-
-}
-.Form .tip-box i{
-    width:16px;
-    height:16px;
-    background: url(./../img/error-ico.png);
+.mainForm {
+    margin-top: 100px;
+    width: 343px;
+    margin: 100px auto 0;
+    overflow: hidden;
     position: absolute;
-    top:10px;
-    left:10px;
-}
-.Form .tip-box .tip-font{
-    font-size: 12px;
-    color: #666;
-    padding: 0 25px 0 35px;
-    vertical-align: middle;
-}
-.Form .tip-box .close-ico{
-    width:16px;
-    height:16px;
-    background: url(./../img/close-ico.png) no-repeat;
-    position: absolute;
-    right:10px;
-    top:12px;
-    cursor: pointer;
-    display: inline-block;
-}
-.select-box{
-    width:287px;
-    height:48px;
-    border: 1px solid#dddddd;
-    border-radius: 2px;
-    position: relative;
-    margin:87px 0;
-}
-.phoneInput span{
-    display: block;
-    color: #cccccc;
-    font-size: 12px;
-    display: none;
-
-}
-.phoneInput{
-    margin-bottom: 20px;
-    text-align: center;
-    padding-top: 12px;
-    margin-top:20px ;
-}
-.phoneInput .phoneNum{
-    width:96%;
-    height:46px;
-    border-radius: 2px;
-    outline: none;
-    border: 1px solid #dadada;
-    color: #474747;
-    text-indent: 15px;
-    font-size: 14px;
-}
-.inp{
-    width:65px;
-    border: none;
-    line-height: 48px;
-    /*border-right:1px solid#dadada ;*/
-    margin-left: 10px;
-    color: gray;
-    font-size: 14px;
-    outline: none;
-}
-.inputNum {
-    border: none;
-    /*color: gray;*/
-    outline: none;
-    margin-left: 10px;
-}
-.username{
-    border: none;
-    width: 197px;
-    height: 44px;
-    outline: none;
+    top:63px;
+    right:188px;
     background: #ffffff;
+    padding-left: 44px;
+    padding-top: 44px;
+    padding-right: 24px;
+    border-radius: 2px;
 }
-.row{
-    background:url(./../img/arrow-down.png)no-repeat center ;
-    width:14px;
-    height:8px;
-    display: inline-block;
-    position: absolute;
-    left:49px;
-    bottom:20px;
-    cursor: pointer;
+.error{
+    font-size: 14px;
+    line-height: 44px;
+    color: red;
 }
-.server{
-    font-size: 12px;
+.number {
+    font-size: 20px;
+    margin-left: -5px;
     margin-bottom: 30px;
-    height:20px;
-    line-height: 20px;
-    margin-top: 10px;
+    width: 350px;
+    text-align: center;
 }
-.pointer{
+.rememberField i button{
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    outline: none;
+    border: 1px solid#cccccc;
+    border-radius: 2px;
     cursor: pointer;
 }
-.linkGreen{
+
+.number a {
     color: #00a7ea;
 }
-.login-form{
+
+.linkABlue:visited {
+    color: #00a7ea;
+}
+
+
+.number span {
+    color: #d9d9d9;
+    display: inline-block;
+    border: 1px solid #dadada;
+    height: 16px;
+    line-height: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
+.normalInput {
+    float: left;
     position: relative;
-}
-.login-form .btn{
-    width:300px;
-    height:40px;
-    background: #32a5e7;
-    border: 1px solid#32a5e7;
-    color: #fff;
-    font-size: 14px;
-    text-align: center;
-    cursor: pointer;
+    display: inline-block;
+    padding: 0 10px;
+    width: 309px;
+    height: 48px;
+    line-height: 22px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #dadada;
     outline: none;
-    margin-top: 25px;
-    border-radius:2px ;
+    color: #474747;
+    overflow: visible;
 }
-.transfer{
-    width:300px;
-    height:40px;
+
+.normalInput input {
+    font-size: 16px;
+    width: 100%;
+    padding: 14px 0;
+    height: 20px;
+    border: none;
+    outline: none;
+}
+
+.errorC {
+    margin-bottom: 10px;
+    border-color: red;
+    color: red;
+}
+
+.checkedN {
+    border: 1px solid #1ece6d;
+}
+
+.formLine {
+    color: #d9d9d9;
+    height: 40px;
+    display: inline-block;
+    border-left: 1px solid #dadada;
+    position: absolute;
+    right: 100px;
+    top: 5px;
+}
+
+#getKey {
+    width: 80px;
+    border: none;
+    outline: none;
+    height: 50px;
+    line-height: 50px;
+    font-size: 16px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    color: #666666;
+}
+
+.i_icon {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.normalInput .password {
+    float: left;
+    width: 200px;
+}
+
+.normalInput .password1 {
+    float: left;
+    width: 200px;
+    display: none;
+}
+
+.normalInput .passwordN {
+    float: left;
+    width: 200px;
+    display: block;
+    border: none;
+    outline: none;
+}
+
+.normalInput .password1N {
+    float: left;
+    width: 200px;
+    display: none;
+}
+
+.pwdBtnShow {
+    outline: none;
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    float: right;
+    margin-right: 5px;
+}
+
+#pwdBtn {
+    margin-top: 13px;
+    margin-bottom: 10px;
+}
+
+.pwdBtnShowN {
+    outline: none;
+    position: relative;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    overflow: hidden;
+    float: right;
+    margin-right: 5px;
+}
+
+#pwdBtnN {
+    margin-top: 13px;
+    margin-bottom: 10px;
+}
+
+
+.rememberField {
+    margin-bottom: 30px;
+    height: 20px;
+    line-height: 20px;
+    float: left;
+    display: block;
+}
+
+.checkboxPic {
+    outline: none;
+    display: inline-block;
+    width: 25px;
+    height: 20px;
+    line-height: 20px;
+    cursor: pointer;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.otherError {
+    display: none;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    color: red;
+    float: left;
+}
+
+.fullBtnBlue {
+    display: inline-block;
+    height: 50px;
+    width: 342px;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+    outline: none;
+    cursor: pointer;
+    background-color: #32a5e7;
+    color: #fff;
+    border-radius: 2px;
+}
+
+/*mainForm1end*/
+
+/*mainForm2*/
+.linkAGray2:visited {
+    color: #00a7ea;
+}
+
+.linkABlue2:hover {
+    color: #2b2b2b;
+}
+
+.normalInput .username {
+    width: 319px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    height: 20px;
+    line-height: 22px;
+    padding: 14px 0;
+}
+
+
+/*mainForm2end*/
+.mainForm2 {
+    display: none;
+}
+.mainForm ul{
     display: flex;
     justify-content: space-between;
-    padding-top: 20px;
+    margin-bottom: 20px;
 }
-.transfer a{
-    display: block;
+.mainForm li a{
     color: #32A5E7;
     font-size: 14px;
 }
-.login-form #qr-btn{
-    width:35px;
-    height:35px;
-    background: url("./../img/qr.png") no-repeat center;
-    position: absolute;
-    right:-26px;
-    top:-171px;
-    display: block;
-}
+
+
+
 /*底部*/
 #footer{
     border-color: transparent !important;

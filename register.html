@@ -15,7 +15,7 @@
 <div class="content">
     <!--头部-->
     <div class="header">
-        <a href="#" class="logo">
+        <a href="index1.html" class="logo">
             <i><img src="./img/meizu.png"></i>
         </a>
     </div>
@@ -23,39 +23,75 @@
 
     </div>
     <!--form表单-->
-    <div class="Form">
-        <div class="tab-title">
-            <a href="#" class="linkBlack">注册 Flyme 账号</a>
+    <form id="#mainForm1" class="mainForm mainForm1 login-form">
+        <div class="number">
+            <a href="#" class="linkAGray number1">注册flyme账号</a>
         </div>
-        <div class="tip-box" id="tip-box">
-            <i class="err-ico"></i>
-            <span class="tip-font">请填写完整的登录信息</span>
-            <span class="close-ico"></span>
+        <div class="normalInput">
+            <input type="text" class="phone inp phoneNum username" id="username"  required="required" maxlength="11" placeholder="账号">
         </div>
-        <form class="login-form" onsubmit="return false">
-                <div class="select-box" id="select-box">
-                  <input type="text" class="inp" value="+86">
-                    <i class="row"></i>
-                    <input type = "text" name="username" class="inp phoneNum username" id="username"  required="required" placeholder="手机号码">
-                    <div class="phoneInput">
-                        <input type = "password" name="password" class="inp phoneNum password" id="password" required="required" placeholder="密码">
-                        <span class="passId error2"></span>
-                    </div>
-                </div>
-            <div class="server">
-                <label class="pointer">点击立即注册，即表示您同意并愿意遵守</label>
-                <a href="https://i.flyme.cn/serviceAgreement" class="linkGreen" target="_blank">Flyme服务协议</a>
-                <label class="pointer">和</label>
-                <a href="https://www.meizu.com/legal.html" class="linkGreen" target="_blank">法律声明</a>
-            </div>
-            <button class="btn" type="submit" name="register-btn" id="btn">立即注册</button>
-            <div class="transfer">
-                <a href="login.html">登录</a>
-            </div>
-            <a href="#" id="qr-btn"></a>
-        </form>
-    </div>
-</div>
+        <span class="error error1"></span>
+        <div class="normalInput">
+            <input type="text" class="kapkey" maxlength="6" placeholder="验证码">
+            <span class="formLine"></span>
+            <a href="#" id="getKey" class="linkABlue">获取验证码</a>
+        </div>
+        <span class="error error2"></span>
+        <div class="normalInput">
+            <input type="text" class="password inp phoneNum password" maxlength="16"  required="required" autocomplete="off" placeholder="密码">
+            <input type="password" class="password1 inp phoneNum password"  required="required" maxlength="16" autocomplete="off" placeholder="密码">
+            <a id="pwdBtn" href="#" class="pwdBtnShow" isshow="false">
+                <i class="i_icon"></i>
+            </a>
+        </div>
+        <span class="error error3"></span>
+        <div class="rememberField">
+				<span class="checkboxPic check_chk" tabindex="-1" isshow="false">
+					<i><button></button></i>
+				</span>
+            <label class="pointer">我已阅读并接受</label>
+            <a href="#" target="_blank" class="linkABlue">《Flyme服务协议条款》</a>
+        </div>
+        <span class="otherError">请确认已阅读并同意Flyme服务协议条款</span>
+        <a href="login.html" class="fullBtnBlue"  type="submit" name="register-btn">注册</a>
+        <ul>
+            <li><a href="login.html">登录</a></li>
+        </ul>
+    </form>
+    <form id="#mainForm2" class="mainForm mainForm2 login-form">
+        <div class="number">
+            <a href="#" class="linkABlue2 number2">验证码登录</a>
+            <span></span>
+            <a href="#" class="linkAGray2">账号登录 </a>
+        </div>
+        <div class="normalInput">
+            <input type="text" class="username" maxlength="32" placeholder="账户名" autocomplete="off">
+        </div>
+        <span class="error error1"></span>
+        <div class="normalInput">
+            <input type="text" class="passwordN" maxlength="16" autocomplete="off" placeholder="密码">
+            <a id="pwdBtnN" href="#" class="pwdBtnShowN" isshow="false">
+                <i class="i_icon"></i>
+            </a>
+        </div>
+        <span class="error error3"></span>
+        <!--<div class="normalInput">-->
+        <!--<input type="text" class="email" maxlength="32" placeholder="安全邮箱" autocomplete="off">-->
+        <!--</div>-->
+        <span class="error error2"></span>
+        <div class="rememberField">
+				<span class="checkboxPic check_chk" tabindex="-1" isshow="false">
+					<i><button></button></i>
+				</span>
+            <label class="pointer">我已阅读并接受</label>
+            <a href="#" target="_blank" class="linkABlue">《Flyme服务协议条款》</a>
+        </div>
+        <span class="otherError">请确认已阅读并同意Flyme服务协议条款</span>
+        <a href="login.html" class="fullBtnBlue register-btn" id="btn" type="submit" name="register-btn">注册</a>
+        <ul>
+            <li><a href="login.html">登录</a></li>
+        </ul>
+    </form>
 <!--底部-->
 <div id="footer" class="footerWrap">
     <div class="footerInner">
@@ -99,6 +135,8 @@
         <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44049102496076" class="linkC"><img src="img/ghs.png"><a href="#" target="_blank">粤公网安备 44049102496076号</a></a>
     </div>
 </div>
+</div>
+<script src="js/jquery-1.9.1.min.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/comment/ajax.js"></script>
 <script src="js/register.js"></script>

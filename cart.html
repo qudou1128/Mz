@@ -11,7 +11,7 @@
 <div class="header">
     <div class="wrapper">
         <div class="header-logo">
-            <a href="#"><img src="img/meizu.png"></a>
+            <a href="index1.html"><img src="img/meizu.png"></a>
         </div>
         <ul class="header-center">
             <li>购物车<i>></i></li>
@@ -39,12 +39,22 @@
 <div class="cart">
     <div class="container">
 
-        <table id="tb" border="1" bordercolor="#ccc" color="#cecece" cellspacing="0" width="600"
-               align="center">
+        <table id="tb"  border-top="1px solid#ccc" bordercolor="#F4F6FA" color="#cecece" cellspacing="0" width="1240"
+              >
         </table>
-        <p>总数：<span id="totalNum"></span></p>
-        <p>总价：<span id="totalPrice"></span></p>
+        <div class="cart-foot">
+            <div class="foot-container">
+                <div class="foot-right">
+                     <span class="cart-num">
+                         已优惠<i>0.00</i>&nbsp;&nbsp;元,
+                     </span>
+                    <span class="num">总数:&nbsp;&nbsp;<span id="totalNum" style="color: #E02B41;"></span></span>
+                    <span class="price">合计:&nbsp;&nbsp;<i>¥</i><span id="totalPrice"></span></span>
+                    <div class="btn">去结算</div>
+                </div>
+        </div>
      </div>
+</div>
 </div>
 </body>
 
@@ -54,15 +64,16 @@
     function renderDom() {
         var cartListStr = getItem('MzCart')
         $('#tb').html(`
-      <tr>
+      <tr style="height: 30px">
          <td>
-                <input type="checkbox" id="allCheck" checked/>全选
+                <input class="inp" type="checkbox" id="allCheck" checked style="cursor: pointer"/>全选
             </td>
-        <td>名称</td>
-        <td>图片</td>
-        <td>价格</td>
-        <td>数量</td>
-        <td>操作</td>
+
+            <td>名称</td>
+             <td>图片</td>
+            <td>价格</td>
+            <td>数量</td>
+            <td>编辑</td>
     </tr> `)
         if (cartListStr) {
 //        购物车有数据
@@ -74,7 +85,7 @@
                         <input type="checkbox" name="check" index="${index}" checked/>
                 </td>
                 <td>${item.title}</td>
-                <td><img src="${item.img}" style="width: 220px; height:220px" /></td>
+                <td><img src="${item.img}" style="width: 120px; height:120px" /></td>
                 <td>${item.price}</td>
                 <td>
                    <input type="number" min="1" step="1" value="${item.num}" onchange="changeNum(event, ${index})">
@@ -82,6 +93,7 @@
                 <td>
                    <button onclick="deleteItem(${index})">删除</button>
                 </td>
+
            </tr>
         `)
  })

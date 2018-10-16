@@ -17,11 +17,10 @@ i {
 
 
 #header-container {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    z-index:999;
+    position: absolute;
+    z-index: 999;
     width: 100%;
+    top:0;
 }
 
 #header-container li {
@@ -32,22 +31,19 @@ i {
 
 #header-container .header {
     font-size: 14px;
-    position: absolute;
-    z-index: 999;
+    position: relative;
 
 }
 
 #header-container .header-wrapper {
     width: 1240px;
-    position: relative;
     margin:0 auto;
     overflow: hidden;
-    margin-left: 100px;
 }
 
 #header-container .header-logo {
     float: left;
-    padding: 33px 0;
+    padding: 39px 0;
 }
 
 #header-container .header-logo img {
@@ -60,7 +56,7 @@ i {
     color: red;
     width: 29px;
     height: 29px;
-    margin: 27px 0 8px 0;
+    margin: 33px 0 8px 0;
     float: right;
 }
 
@@ -68,8 +64,8 @@ i {
     width: 6px;
     height: 14px;
     position: absolute;
-    top: 26px;
-    right: 0;
+    top: 32px;
+    right:167px;
     border-radius: 50%;
     background: #c00;
     color: #fff;
@@ -79,47 +75,36 @@ i {
     font-size: 12px;
 }
 
-.header-user {
+.ulRight{
     float: right;
     font-size: 12px;
-    padding: 28px 0 0 8px;
-    position: relative;
+    padding: 33px 0 0 8px;
     z-index: 105;
 }
 
-.header-user .header-userImg {
+.ulRight .header-userImg {
     cursor: pointer;
     position: relative;
     z-index: 3;
-}
-
-.header-user .header-userImg img {
-    width: 29px;
-    height: 29px;
-    display: block;
-}
-
-.header-user-box {
-    width: 60px;
-    height: 78px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 2;
-    border-bottom: 0;
-}
-
-.user-trigger {
-    float: right;
-
-}
-.user-trigger .user-dropdown {
+    /*width: 29px;*/
     /*display: block;*/
+    /*height: 29px;*/
+}
+
+
+.ulRight .header-userImg {
+cursor: pointer;
+position: relative;
+z-index: 3;
+}
+
+.user-dropdown {
+    display: block;
     width: 105px;
-    /*position: absolute;*/
-    /*top: 64px;*/
-    /*left: 89%;*/
-    /*right: 0;*/
+    position: absolute;
+    top:70px;
+    left: 86%;
+    right: 0;
     background: #ffffff;
     border-radius: 2px;
     box-sizing: border-box;
@@ -129,7 +114,7 @@ i {
     box-shadow: 0 0 5px rgba(0,0,0,.1);
     line-height: 18px;
     display: none;
-    margin-top: -30px;
+
 }
 
 .user-dropdown li a{
@@ -148,7 +133,7 @@ i {
     line-height: 29px;
     float: right;
     border: 1px solid#999999;
-    margin: 26px 5px 0 10px;
+    margin: 33px 5px 0 10px;
     font-size: 12px;
     border-radius:20px;
     box-sizing: border-box;
@@ -205,81 +190,74 @@ i {
     color: #32A5E7;
 }
 /*二级菜单*/
-.header-sub{
-    display: block;
-    min-width:100%;
-    height: 0;
-    position: absolute;
-    top:82px;
-    left:0;
-    background: #ffffff;
+#header-nav{
+    float: right;
     overflow: hidden;
-    z-index: 999;
-}
-.subWrap{
-    width:1240px;
-    margin: 0 auto;
-    background: #ffffff;
-}
-.header-sub ul{
-    padding: 5px 0 20px;
-    overflow: hidden;
-    text-align: center;
-}
-.data-sub li{
-    display: inline-block;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-}
-.data-sub li:hover{
-    opacity: 0.5;
-}
-.data-sub a {
-    display: block;
-    width:120px;
-    color: #666666;
-    font-size: 12px;
     white-space: nowrap;
-    text-overflow: ellipsis;
-    padding: 0 16px;
-    cursor: pointer;
-    position: relative;
-    z-index: 99;
 }
-.data-sub i img {
-    width: 120px;
-    height: 120px;
-    display: block;
+.sub {
+    float: left;
+    height: 100px;
+    line-height: 100px;
+
 }
-.data-sub span{
-    opacity: .1;
-    transition: opacity .2s ease-in-out;
+#header-nav ul{
+    float: right;
+}
+#header-nav li{
+    float: left;
+}
+.sub p a {
+    text-decoration: none;
+    color: #FFFFFF;
+    margin-right: 45px;
+}
+
+.sub p a:hover {
+
+    color: deepskyblue;
+}
+
+.item {
     width: 100%;
-    height: 100%;
-    display: block;
+    z-index: 1000;
+    /*display: block;*/
     position: absolute;
-    top:0;
-    left:0;
-    background:#ffffff;
+    left: 0;
+    top: 82px;
+    background-color: #fff;
+    height: 0;
+    display: none;
 }
-.data-sub em{
-    display: block;
-    color: #666;
-    font-style: normal;
-    font-size: 12px;
-}
-.app-down{
-    position: relative;
+
+.item .ulR {
     width: 1240px;
     margin: 0 auto;
-    padding: 10px 0;
 }
-.app-down img{
+.ulR img:hover{
+    opacity: 0.3;
+}
+.item ul li {
+    float: left;
+    text-align: center;
+    width: 142px;
+    height: 155px;
+    margin-top: 30px;
+}
+
+.item ul li img {
+    width: 100px;
+    height: 100px;
     display: block;
-    margin: 0 auto;
-    width: 100%;
+    margin-left: 21px;
 }
+
+.item ul p {
+    line-height: 24px;
+    color: #666;
+    font-size: 12px;
+}
+
 /*轮播*/
 .mz-banner{
      position: relative;
@@ -882,3 +860,25 @@ i {
 .layout-icon-license{
     background: url(./../img/jw1.png) no-repeat;
 }
+
+/*固定栏*/
+.site-gotop{
+    position: fixed;
+    width: 44px;
+    bottom: 50px;
+    left: 50%;
+    margin-left: 640px;
+}
+.site-gotop .gotop-suggest, .gotop-arrow{
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    background: 50% 50% no-repeat #b4b4b4;
+    cursor: pointer;
+    background-image: url(./../img/xin.png);
+}
+.site-gotop .gotop-arrow{
+    background-image: url(./../img/shang.png);
+}
+
+
