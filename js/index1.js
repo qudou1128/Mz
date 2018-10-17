@@ -1,13 +1,15 @@
 //用户登录下拉
 $(function(){
     $('.ulRight').hover(function(){
-        $(this).find('#dropdown').css('display', 'block');
+        $(this).find('.user-dropdown ').fadeIn('slow');
     }, function(){
-        $(this).find('#dropdown').css('display', 'none');
+        $(this).find('.user-dropdown').fadeOut('slow');
+        $(this).find('.user-dropdown').stop(true, true);
     });
 });
 
-   // // 二级菜单
+
+// 二级菜单
     $('#header-nav').find('.navLink').mouseenter(function () {
         $(this).find('.item').fadeIn();
         $(this).siblings('li').find('.item').fadeOut();

@@ -65,12 +65,12 @@
         var cartListStr = getItem('MzCart')
         $('#tb').html(`
       <tr style="height: 30px">
-         <td>
+            <td>
                 <input class="inp" type="checkbox" id="allCheck" checked style="cursor: pointer"/>全选
             </td>
 
             <td>名称</td>
-             <td>图片</td>
+            <td>图片</td>
             <td>价格</td>
             <td>数量</td>
             <td>编辑</td>
@@ -91,7 +91,7 @@
                    <input type="number" min="1" step="1" value="${item.num}" onchange="changeNum(event, ${index})">
                 </td>
                 <td>
-                   <button onclick="deleteItem(${index})">删除</button>
+                   <button class="btn" onclick="deleteItem(${index})">删除</button>
                 </td>
 
            </tr>
@@ -261,6 +261,7 @@
     function setItem(key, value) {
         localStorage.setItem(key, JSON.stringify(value))//存储本地要转字符串
     }
+
 
 </script>
 

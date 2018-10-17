@@ -14,6 +14,7 @@ i{
 .container{
     width: 100%;
     background: #f8f8f8;
+    height: 100%;
 }
 .wrapper{
     width:1240px;
@@ -150,8 +151,8 @@ i{
 #list li p{
     display: inline-block;
     padding-top: 20px;
-    width: 100%;
-    padding-left: 79px;
+    padding-left: 46px;
+    text-align: center;
 }
 #list li button{
     display: block;
@@ -163,7 +164,7 @@ i{
     background: #32A5E7;
     color: #ffffff;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 56px;
     cursor: pointer;
 
 }
