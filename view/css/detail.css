@@ -570,6 +570,7 @@ i {
     bottom: 50px;
     left: 50%;
     margin-left: 640px;
+    display: none;
 }
 .site-gotop .gotop-suggest, .gotop-arrow{
     display: inline-block;

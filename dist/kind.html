@@ -1,86 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/kind.css">
-    <link rel="stylesheet" href="css/commo.css">
-</head>
-<body>
-<!--头部-->
-<div id="a">
-
-</div>
-<div class="container">
-    <div class="wrapper">
-        <ul class="title">
-            <li><a href="index1.html">首页</a><i>></i>&nbsp;&nbsp;</li>
-            <li><a href="#">全部商品</a><i>></i>&nbsp;&nbsp;</li>
-            <li><a href="#">手机</a></li>
-        </ul>
-        <div class="selector">
-            <div class="cate">
-                <div class="prop">
-                    <div class="line-wrap">
-                        <div class="mod-key"><span>屏幕尺寸：</span></div>
-                    </div>
-                    <div class="mod-value">
-                        <div class="mod-list">
-                            <ul>
-                                <li class="first"><a href="#">全部</a></li>
-                                <li><a href="#">5.2英寸</a></li>
-                                <li><a href="#">5.2英寸</a></li>
-                                <li><a href="#">5.2英寸</a></li>
-                                <li class="act"><a href="#">5.2英寸</a></li>
-                                <li><a href="#">5.2英寸</a></li>
-                                <li><a href="#">5.2英寸</a></li>
-                                <li><a href="#">5.2英寸</a></li>
-                                <li><a href="#">5.2英寸</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="prop">
-                    <div class="line-wrap">
-                        <div class="mod-key"><span>机身内存：</span></div>
-                    </div>
-                    <div class="mod-value">
-                        <div class="mod-list">
-                            <ul>
-                                <li class="first"><a href="#">全部</a></li>
-                                <li><a href="#">5.2英寸</a></li>
-                                <li><a href="#">5.2英寸</a></li>
-                                <li class="act"><a href="#">5.2英寸</a></li>
-                                <li><a href="#">5.2英寸</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="filter">
-            <div class="older">
-                <a href="#">推荐</a>
-                <a href="#">新品</a>
-                <a href="#">价格</a>
-            </div>
-        </div>
-        <div class="phone">
-            <ul id="list"></ul>
-        </div>
-    </div>
-</div>
-            <!--<a href="cart.html">购物车</a>-->
-<div id="b">
-
-</div>
-</body>
-<script src='js/jquery.min.js'></script>
-<script src="js/jquery.js"></script>
-<script src="js/a.js"></script>
-<script>
-    var list = []; // 列表数据
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Document</title><link rel="stylesheet" href="css/kind.css"><link rel="stylesheet" href="css/commo.css"></head><body><div id="a"></div><div class="container"><div class="wrapper"><ul class="title"><li><a href="index1.html">首页</a><i>></i>&nbsp;&nbsp;</li><li><a href="#">全部商品</a><i>></i>&nbsp;&nbsp;</li><li><a href="#">手机</a></li></ul><div class="selector"><div class="cate"><div class="prop"><div class="line-wrap"><div class="mod-key"><span>屏幕尺寸：</span></div></div><div class="mod-value"><div class="mod-list"><ul><li class="first"><a href="#">全部</a></li><li><a href="#">5.2英寸</a></li><li><a href="#">5.2英寸</a></li><li><a href="#">5.2英寸</a></li><li class="act"><a href="#">5.2英寸</a></li><li><a href="#">5.2英寸</a></li><li><a href="#">5.2英寸</a></li><li><a href="#">5.2英寸</a></li><li><a href="#">5.2英寸</a></li></ul></div></div></div><div class="prop"><div class="line-wrap"><div class="mod-key"><span>机身内存：</span></div></div><div class="mod-value"><div class="mod-list"><ul><li class="first"><a href="#">全部</a></li><li><a href="#">5.2英寸</a></li><li><a href="#">5.2英寸</a></li><li class="act"><a href="#">5.2英寸</a></li><li><a href="#">5.2英寸</a></li></ul></div></div></div></div></div><div class="filter"><div class="older"><a href="#">推荐</a> <a href="#">新品</a> <a href="#">价格</a></div></div><div class="phone"><ul id="list"></ul></div></div></div><div id="b"></div></body><script src="js/jquery.min.js"></script><script src="js/jquery.js"></script><script src="js/a.js"></script><script>var list = []; // 列表数据
     $.ajax({
         url: 'json/list.json',
         success: function (data) {
@@ -194,6 +112,4 @@
     function setItem(key, value) {
         localStorage.setItem(key, JSON.stringify(value))
         // $.cookie(key, JSON.stringify(value), {expires: 7})
-    }
-</script>
-</html>
+    }</script></html>

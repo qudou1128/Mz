@@ -219,7 +219,8 @@ i {
 .sub p a {
     text-decoration: none;
     color: #515151;
-    margin-right: 45px;
+    padding: 31px 20px 30px;
+    line-height: 21px;
 }
 
 .sub p a:hover {

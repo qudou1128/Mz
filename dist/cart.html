@@ -1,66 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="css/cart.css">
-    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
-    <script src="js/cart.js"></script>
-</head>
-<body>
-<div class="header">
-    <div class="wrapper">
-        <div class="header-logo">
-            <a href="index1.html"><img src="img/meizu.png"></a>
-        </div>
-        <ul class="header-center">
-            <li>购物车<i>></i></li>
-            <li class="link">确认订单<i>></i></li>
-            <li class="link">在线支付<i>></i></li>
-            <li class="link">完成</li>
-        </ul>
-        <ul class="header-right">
-            <li class="order"><a href="#">我的订单</a></li>
-            <li class="order">
-                <a href="#">用户644862268...的商城</a>
-                <ul class="right-down">
-                    <li class="item"><a href="#">地址管理</a></li>
-                    <li class="item"><a href="#">我的收藏</a></li>
-                    <li class="item"><a href="#">我的回购金</a></li>
-                    <li class="item"><a href="#">问题反馈</a></li>
-                    <li class="item" id="last"><a href="#">退出</a></li>
-                </ul>
-            </li>
-        </ul>
-
-    </div>
-</div>
-<!--购物车-->
-<div class="cart">
-    <div class="container">
-
-        <table id="tb"  border-top="1px solid#ccc" bordercolor="#F4F6FA" color="#cecece" cellspacing="0" width="1240"
-              >
-        </table>
-        <div class="cart-foot">
-            <div class="foot-container">
-                <div class="foot-right">
-                     <span class="cart-num">
-                         已优惠<i>0.00</i>&nbsp;&nbsp;元,
-                     </span>
-                    <span class="num">总数:&nbsp;&nbsp;<span id="totalNum" style="color: #E02B41;"></span></span>
-                    <span class="price">合计:&nbsp;&nbsp;<i>¥</i><span id="totalPrice"></span></span>
-                    <div class="btn">去结算</div>
-                </div>
-        </div>
-     </div>
-</div>
-</div>
-</body>
-
-<script src="js/jquery.min.js"></script>
-<script>
-    renderDom()
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Title</title><link rel="stylesheet" href="css/cart.css"><script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script><script src="js/cart.js"></script></head><body><div class="header"><div class="wrapper"><div class="header-logo"><a href="index1.html"><img src="img/meizu.png"></a></div><ul class="header-center"><li>购物车<i>></i></li><li class="link">确认订单<i>></i></li><li class="link">在线支付<i>></i></li><li class="link">完成</li></ul><ul class="header-right"><li class="order"><a href="#">我的订单</a></li><li class="order"><a href="#">用户644862268...的商城</a><ul class="right-down"><li class="item"><a href="#">地址管理</a></li><li class="item"><a href="#">我的收藏</a></li><li class="item"><a href="#">我的回购金</a></li><li class="item"><a href="#">问题反馈</a></li><li class="item" id="last"><a href="#">退出</a></li></ul></li></ul></div></div><div class="cart"><div class="container"><table id="tb" border-top="1px solid#ccc" bordercolor="#F4F6FA" color="#cecece" cellspacing="0" width="1240"></table><div class="cart-foot"><div class="foot-container"><div class="foot-right"><span class="cart-num">已优惠<i>0.00</i>&nbsp;&nbsp;元, </span><span class="num">总数:&nbsp;&nbsp;<span id="totalNum" style="color: #E02B41;"></span></span> <span class="price">合计:&nbsp;&nbsp;<i>¥</i><span id="totalPrice"></span></span><div class="btn">去结算</div></div></div></div></div></div></body><script src="js/jquery.min.js"></script><script>renderDom()
     function renderDom() {
         var cartListStr = getItem('MzCart')
         $('#tb').html(`
@@ -98,7 +36,7 @@
         `)
  })
             selectFn()
-//            countFn()
+//            countFn()//遍历结束之后计算总数和总价
         } else {
 //      购物车没数据
             $('#tb').append(`<tr>
@@ -260,9 +198,4 @@
     }
     function setItem(key, value) {
         localStorage.setItem(key, JSON.stringify(value))//存储本地要转字符串
-    }
-
-
-</script>
-
-</html>
+    }</script></html>
